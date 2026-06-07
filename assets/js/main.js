@@ -96,6 +96,14 @@
     revealables.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---------- map scroll-zoom guard ---------- */
+  var mapGuard = doc.getElementById('map-guard');
+  if (mapGuard) {
+    mapGuard.addEventListener('click', function () {
+      mapGuard.classList.add('dismissed');
+    });
+  }
+
   /* ---------- footer year ---------- */
   var yEl = doc.getElementById('year');
   if (yEl) yEl.textContent = new Date().getFullYear();
