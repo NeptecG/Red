@@ -356,6 +356,8 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
 
 /* ---------- responsive ---------- */
 @media (max-width:980px){
+  /* solid header on mobile so the parchment logo blends instead of looking washed */
+  .site-header{background:var(--beige);backdrop-filter:none}
   .nav-links{
     position:fixed;left:0;right:0;top:var(--header-h);
     flex-direction:column;align-items:flex-start;gap:.2rem;
@@ -387,6 +389,7 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
   .nav-actions{gap:.6rem}
   .nav-cta{display:inline-flex;padding:.6em 1em;font-size:.7rem;letter-spacing:.1em}
   .hero{min-height:88svh}
+  .scroll-cue{display:none}
   .band .container{flex-direction:column;align-items:flex-start}
 }
 
