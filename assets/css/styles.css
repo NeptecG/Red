@@ -217,7 +217,7 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
 .menu-item .mi-name .sig-star{color:var(--ox);font-size:.9rem;vertical-align:super}
 .menu-item .mi-dots{flex:1;border-bottom:1px dotted var(--line-2);transform:translateY(-.3rem)}
 .menu-item .mi-price{font-family:var(--font-display);font-weight:700;font-size:1.2rem;color:var(--ox)}
-.menu-item .mi-price .cur{font-family:var(--font-body);font-weight:600;font-size:.9em;margin-left:.04em}
+.menu-item .mi-price .cur,.dish-card .price .cur{font-family:var(--font-body);font-weight:600;font-size:.9em;margin-left:.04em}
 .menu-item .mi-desc{font-size:1rem;color:var(--muted);margin-top:.25rem;max-width:48ch}
 .menu-note{text-align:center;color:var(--muted);font-style:italic;margin-top:1rem}
 
