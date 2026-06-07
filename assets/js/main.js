@@ -1,5 +1,5 @@
 /* ============================================================
-   Trágos Kokkinos - site behaviour
+   Trágos Kokkinos · site behaviour
    ============================================================ */
 (function () {
   'use strict';
@@ -198,7 +198,7 @@
         data.forEach(function (v, k) { if (v && k.charAt(0) !== '_') parts.push(k + ': ' + v); });
         var en = root.getAttribute('lang') === 'en';
         var mail = 'mailto:hello@tragoskokkinos.gr?subject=' +
-          encodeURIComponent('Reservation / Κράτηση - Τράγος Κόκκινος') + '&body=' + encodeURIComponent(parts.join('\n'));
+          encodeURIComponent('Reservation / Κράτηση · Τράγος Κόκκινος') + '&body=' + encodeURIComponent(parts.join('\n'));
         showFeedback('warn', fbMsg('demo') +
           ' <a href="' + mail + '" style="color:inherit;text-decoration:underline;font-weight:600">' +
           (en ? 'Email us' : 'Στείλτε email') + '</a>.');
