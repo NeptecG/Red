@@ -125,7 +125,7 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
 .site-header.is-scrolled{background:rgba(239,233,220,.96);border-bottom-color:var(--line);box-shadow:0 6px 22px rgba(34,30,24,.07)}
 .nav{display:flex;align-items:center;gap:1.5rem;width:100%;max-width:var(--container);margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
 .brand{display:flex;align-items:center;gap:.7rem;margin-right:auto}
-.brand img{height:50px;width:auto}
+.brand img{height:50px;width:auto;filter:saturate(1.18) brightness(1.03)}
 .brand .brand-word{font-family:var(--font-display);font-weight:700;font-size:1.28rem;color:var(--ox);letter-spacing:.02em;line-height:1;white-space:nowrap}
 .nav-links{display:flex;align-items:center;gap:1.6rem}
 .nav-links a{
@@ -243,7 +243,7 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
 .lb-close{top:clamp(1rem,3.5vh,1.6rem);right:clamp(1rem,4vw,1.8rem);font-size:1.3rem}
 .lb-prev{left:clamp(.8rem,3vw,1.8rem);top:50%;transform:translateY(-50%)}
 .lb-next{right:clamp(.8rem,3vw,1.8rem);top:50%;transform:translateY(-50%)}
-@media(max-width:600px){.lightbox button{width:44px;height:44px}.lb-prev,.lb-next{display:none}}
+@media(max-width:768px){.lightbox button{width:44px;height:44px}.lightbox .lb-prev,.lightbox .lb-next{display:none}}
 
 /* people / team */
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.4vw,1.8rem)}
