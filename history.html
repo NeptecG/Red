@@ -7,6 +7,7 @@
   <title data-en="History · Trágos Kokkinos">Ιστορία · Τράγος Κόκκινος</title>
   <meta name="description" data-en-content="The story behind Trágos Kokkinos: the name from Kostas Paroritis's novel, and a kitchen rooted in tradition with a gourmet touch." content="Η ιστορία πίσω από τον Τράγο Κόκκινο: το όνομα από το μυθιστόρημα του Κώστα Παρορίτη και μια κουζίνα με ρίζες στην παράδοση και γκουρμέ ματιά.">
   <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
   <meta property="og:type"        content="restaurant">
   <meta property="og:locale"      content="el_GR">
   <meta property="og:site_name"   content="Τράγος Κόκκινος">
@@ -67,14 +68,13 @@
         <li><a href="history.html" class="active" aria-current="page" data-en="History">Ιστορία</a></li>
         <li><a href="gallery.html" data-en="Gallery">Gallery</a></li>
         <li><a href="directions.html" data-en="Find Us">Βρείτε μας</a></li>
-        <li><a href="reservations.html" data-en="Reservations">Κρατήσεις</a></li>
       </ul>
       <div class="nav-actions">
+        <a class="btn btn-solid nav-cta" href="reservations.html" data-en="Reserve">Κράτηση</a>
         <div class="lang-toggle" role="group" aria-label="Language / Γλώσσα">
           <button type="button" data-lang="el" class="active" aria-pressed="true">EL</button>
           <button type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
-        <a class="btn btn-solid nav-cta" href="reservations.html" data-en="Reserve">Κράτηση</a>
         <button class="nav-toggle" aria-label="Menu / Μενού" aria-expanded="false" aria-controls="nav-links"><span></span></button>
       </div>
     </nav>
@@ -148,7 +148,38 @@
         </div>
         <div style="text-align:center;margin-top:clamp(2rem,4vw,3rem)" data-reveal>
           <a class="btn btn-solid" href="menu.html" data-en="Explore the menu">Δείτε το μενού</a>
-          <a class="btn btn-ghost" href="reservations.html" style="margin-left:.6rem" data-en="Reserve a table">Κράτηση</a>
+          <a class="btn btn-ghost" href="reservations.html" style="margin-left:.6rem" data-en="Reserve">Κράτηση</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PEOPLE / The people behind the myth -->
+    <section class="section people" style="padding-top:0">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow flank" data-en="The people behind the myth">Τα πρόσωπα του μύθου</span>
+          <h2 class="section-title" data-en="The hands that shape the table">Τα χέρια πίσω από το τραπέζι</h2>
+          <p data-en="Two chefs and a sommelier who turn the produce of Epirus into something worth telling stories about.">Δύο σεφ κι ένας σομελιέ που μετατρέπουν τα υλικά της Ηπείρου σε κάτι που αξίζει να το διηγείσαι.</p>
+        </div>
+        <div class="team-grid">
+          <article class="team-card" data-reveal>
+            <span class="team-mono" aria-hidden="true">ΔΑ</span>
+            <span class="team-role" data-en="Executive Chef">Εκτελεστικός Σεφ</span>
+            <h3 class="team-name" data-en="Dimitris Alexiou">Δημήτρης Αλεξίου</h3>
+            <p class="team-bio" data-en="Keeper of the fire. He cooks the mountain recipes of Epirus the way they were meant to be: slow, honest, generous.">Φύλακας της φωτιάς. Μαγειρεύει τις ηπειρώτικες συνταγές του βουνού όπως τους αξίζει: αργά, τίμια, γενναιόδωρα.</p>
+          </article>
+          <article class="team-card" data-reveal data-reveal-delay="1">
+            <span class="team-mono" aria-hidden="true">ΕΚ</span>
+            <span class="team-role" data-en="Executive Chef">Εκτελεστική Σεφ</span>
+            <h3 class="team-name" data-en="Eleni Konstantinou">Ελένη Κωνσταντίνου</h3>
+            <p class="team-bio" data-en="The gourmet hand. She gives tradition a modern line: in the plating, the technique and the unexpected pairing.">Το γκουρμέ χέρι. Δίνει στην παράδοση μια σύγχρονη γραμμή: στην παρουσίαση, στην τεχνική και στον απρόσμενο συνδυασμό.</p>
+          </article>
+          <article class="team-card" data-reveal data-reveal-delay="2">
+            <span class="team-mono" aria-hidden="true">ΓΒ</span>
+            <span class="team-role" data-en="Sommelier">Σομελιέ</span>
+            <h3 class="team-name" data-en="Giorgos Vlachos">Γιώργος Βλάχος</h3>
+            <p class="team-bio" data-en="Guardian of the cellar. He pairs every dish with a Greek label, from the crisp whites of the Amvrakikos to the bold reds of the mainland.">Φύλακας του κελαριού. Ταιριάζει κάθε πιάτο με μια ελληνική ετικέτα, από τα δροσερά λευκά του Αμβρακικού ως τα δυνατά κόκκινα της στεριάς.</p>
+          </article>
         </div>
       </div>
     </section>
