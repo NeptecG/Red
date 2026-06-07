@@ -96,6 +96,25 @@
     revealables.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---------- cookie / GDPR banner ---------- */
+  var cookieBar = doc.getElementById('cookie-bar');
+  if (cookieBar) {
+    var COOKIE_KEY = 'tk-cookie';
+    var accepted = false;
+    try { accepted = !!localStorage.getItem(COOKIE_KEY); } catch (e) {}
+    if (!accepted) {
+      setTimeout(function () { cookieBar.classList.add('visible'); }, 500);
+    }
+    var cookieBtn = doc.getElementById('cookie-ok');
+    if (cookieBtn) {
+      cookieBtn.addEventListener('click', function () {
+        cookieBar.classList.remove('visible');
+        setTimeout(function () { cookieBar.hidden = true; }, 420);
+        try { localStorage.setItem(COOKIE_KEY, '1'); } catch (e) {}
+      });
+    }
+  }
+
   /* ---------- footer year ---------- */
   var yEl = doc.getElementById('year');
   if (yEl) yEl.textContent = new Date().getFullYear();

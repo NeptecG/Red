@@ -349,6 +349,26 @@ em{font-style:italic}
   .hero-bg img{animation:none}
 }
 
+/* ---------- cookie / GDPR banner ---------- */
+.cookie-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:150;
+  background:var(--brown);color:#CFC6B4;
+  display:flex;align-items:center;gap:1.2rem;
+  padding:.85rem clamp(1.25rem,4vw,2.5rem);
+  border-top:1px solid rgba(239,233,220,.15);
+  transform:translateY(100%);transition:transform .4s var(--ease);
+}
+.cookie-bar.visible{transform:translateY(0)}
+.cookie-bar p{margin:0;max-width:none;font-size:.82rem;opacity:.85;flex:1}
+.cookie-bar-btn{
+  flex:none;background:var(--ox);color:var(--beige);border:none;border-radius:999px;
+  padding:.48em 1.3em;font-family:var(--font-body);font-size:.76rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;cursor:pointer;white-space:nowrap;
+  transition:background .2s var(--ease);
+}
+.cookie-bar-btn:hover{background:var(--ox-deep)}
+@media(max-width:600px){.cookie-bar{flex-direction:column;align-items:flex-start;gap:.7rem}}
+
 /* ---------- print (menu page) ---------- */
 @media print{
   *{box-shadow:none !important;text-shadow:none !important;animation:none !important;transition:none !important}
