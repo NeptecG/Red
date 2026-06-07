@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('has-js');</script>
+  <title data-en="Page not found · Trágos Kokkinos">Σελίδα δεν βρέθηκε · Τράγος Κόκκινος</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+  <style>
+    .err-wrap{
+      min-height:calc(100svh - var(--header-h));
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;padding:clamp(2rem,8vw,5rem) clamp(1.25rem,4vw,2.5rem);
+    }
+    .err-inner{max-width:560px}
+    .err-num{
+      font-family:var(--font-display);font-size:clamp(6rem,18vw,12rem);
+      font-weight:700;line-height:1;color:var(--ox);opacity:.15;
+      letter-spacing:-.04em;user-select:none;
+    }
+    .err-inner h1{
+      font-family:var(--font-display);font-size:clamp(1.7rem,4vw,2.8rem);
+      color:var(--ox);margin-top:-1.5rem;
+    }
+    .err-inner p{color:var(--muted);margin:1rem auto 2rem}
+    .err-actions{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html" aria-label="Τράγος Κόκκινος">
+        <img src="assets/logo.png" alt="Τράγος Κόκκινος" width="50" height="50">
+        <span class="brand-word">Τράγος Κόκκινος</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="menu.html" data-en="Menu">Μενού</a></li>
+        <li><a href="history.html" data-en="History">Ιστορία</a></li>
+        <li><a href="gallery.html" data-en="Gallery">Gallery</a></li>
+        <li><a href="directions.html" data-en="Find Us">Βρείτε μας</a></li>
+        <li><a href="reservations.html" data-en="Reservations">Κρατήσεις</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-toggle" role="group" aria-label="Language / Γλώσσα">
+          <button type="button" data-lang="el" class="active" aria-pressed="true">EL</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn-solid nav-cta" href="reservations.html" data-en="Reserve">Κράτηση</a>
+        <button class="nav-toggle" aria-label="Menu / Μενού" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="err-wrap">
+      <div class="err-inner">
+        <div class="err-num" aria-hidden="true">404</div>
+        <h1 data-en="Page not found">Η σελίδα δεν βρέθηκε</h1>
+        <p data-en="The page you are looking for may have moved or no longer exists. Head back home or explore the menu.">Η σελίδα που ψάχνετε μάλλον μετακινήθηκε ή δεν υπάρχει πλέον. Επιστρέψτε στην αρχική ή εξερευνήστε το μενού.</p>
+        <div class="err-actions">
+          <a class="btn btn-solid" href="index.html" data-en="Back home">Αρχική σελίδα</a>
+          <a class="btn btn-ghost" href="menu.html" data-en="View menu">Δείτε το μενού</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-badge"><img src="assets/logo.png" alt="Τράγος Κόκκινος" width="84" height="84"></span>
+          <p data-en="Traditional Greek cooking with a gourmet soul, in the heart of Preveza.">Παραδοσιακή ελληνική κουζίνα με γκουρμέ ψυχή, στην καρδιά της Πρέβεζας.</p>
+        </div>
+        <div class="f-col">
+          <h4 data-en="Explore">Εξερευνήστε</h4>
+          <a href="menu.html" data-en="Menu">Μενού</a>
+          <a href="history.html" data-en="History">Ιστορία</a>
+          <a href="gallery.html" data-en="Gallery">Gallery</a>
+          <a href="directions.html" data-en="Find Us">Βρείτε μας</a>
+          <a href="reservations.html" data-en="Reservations">Κρατήσεις</a>
+        </div>
+        <div class="f-col">
+          <h4 data-en="Hours">Ώρες</h4>
+          <ul>
+            <li data-en="Daily">Καθημερινά</li>
+            <li>13:00 - 24:00</li>
+          </ul>
+          <h4 style="margin-top:1.5rem" data-en="Address">Διεύθυνση</h4>
+          <a href="directions.html" data-en="1 Vyronos St, Preveza, 48100">Βύρωνος 1, Πρέβεζα, 48100</a>
+        </div>
+        <div class="f-col">
+          <h4 data-en="Contact">Επικοινωνία</h4>
+          <a href="tel:+302682000000">+30 26820 00000</a>
+          <a href="mailto:hello@tragoskokkinos.gr">hello@tragoskokkinos.gr</a>
+          <div class="social">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0.5 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Τράγος Κόκκινος · <span data-en="Preveza, Greece">Πρέβεζα, Ελλάδα</span></span>
+        <span data-en="Crafted with meraki">Φτιαγμένο με μεράκι</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

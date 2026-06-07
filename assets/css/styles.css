@@ -348,3 +348,23 @@ em{font-style:italic}
   .has-js [data-reveal]{opacity:1;transform:none}
   .hero-bg img{animation:none}
 }
+
+/* ---------- print (menu page) ---------- */
+@media print{
+  *{box-shadow:none !important;text-shadow:none !important;animation:none !important;transition:none !important}
+  .has-js [data-reveal]{opacity:1 !important;transform:none !important}
+  body{background:#fff;color:#000;font-size:11pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .site-header,.site-footer,.menu-tabs,.scroll-cue,.btn,.band,
+  .page-hero,.tag-badge,.frame,.scroll-cue{display:none !important}
+  main{padding-top:0}
+  .section{padding-block:1.2rem}
+  .menu-cat{margin-bottom:1.4rem;page-break-inside:avoid}
+  .menu-cat-head h2{color:#7E241B;font-size:1.4rem}
+  .menu-cat-head .rule{display:none}
+  .menu-list{grid-template-columns:1fr 1fr;gap:.1rem 2.5rem}
+  .menu-item{padding:.5rem 0;border-bottom:1px dotted #ccc;page-break-inside:avoid}
+  .menu-item .mi-name{font-size:1.05rem}
+  .menu-item .mi-price{color:#7E241B}
+  .menu-note{margin-top:.5rem;font-size:.85rem}
+  a[href]::after{content:none}
+}

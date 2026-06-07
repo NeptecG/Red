@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://tragoskokkinos.gr/sitemap.xml
