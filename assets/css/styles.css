@@ -68,7 +68,7 @@ em{font-style:italic}
 
 .eyebrow{
   font-family:var(--font-body);
-  font-size:.74rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;
+  font-size:.8rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
   color:var(--ox);display:inline-flex;align-items:center;gap:.7rem;
 }
 .eyebrow::before,.eyebrow.flank::after{content:"";width:26px;height:1px;background:var(--ox);opacity:.6}
@@ -184,7 +184,7 @@ em{font-style:italic}
 .dish-card:hover .img-wrap img{transform:scale(1.06)}
 .dish-card .card-body{padding:1.5rem 1.5rem 1.7rem}
 .dish-card h3{color:var(--ox);margin-bottom:.4rem}
-.dish-card .card-body p{font-size:.98rem;color:var(--muted)}
+.dish-card .card-body p{font-size:1.04rem;color:var(--muted)}
 .dish-card .price{display:inline-block;margin-top:.9rem;font-family:var(--font-display);font-weight:700;font-size:1.25rem;color:var(--ink)}
 
 /* ---------- band (hours / cta) ---------- */
@@ -193,7 +193,7 @@ em{font-style:italic}
 .band .container{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem;padding-block:clamp(2.25rem,4vw,3.25rem)}
 .band h2{color:var(--beige);font-size:clamp(1.7rem,3vw,2.5rem)}
 .band .band-info{display:flex;flex-wrap:wrap;gap:2.2rem}
-.band .band-info .bi-label{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;opacity:.75;margin-bottom:.3rem}
+.band .band-info .bi-label{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;opacity:.8;margin-bottom:.3rem}
 .band .band-info .bi-value{font-family:var(--font-display);font-size:1.3rem}
 .band a.bi-value:hover{text-decoration:underline}
 
@@ -213,7 +213,7 @@ em{font-style:italic}
 .menu-item .mi-name .sig-star{color:var(--ox);font-size:.9rem;vertical-align:super}
 .menu-item .mi-dots{flex:1;border-bottom:1px dotted var(--line-2);transform:translateY(-.3rem)}
 .menu-item .mi-price{font-family:var(--font-display);font-weight:700;font-size:1.2rem;color:var(--ox)}
-.menu-item .mi-desc{font-size:.94rem;color:var(--muted);margin-top:.25rem;max-width:48ch}
+.menu-item .mi-desc{font-size:1rem;color:var(--muted);margin-top:.25rem;max-width:48ch}
 .menu-note{text-align:center;color:var(--muted);font-style:italic;margin-top:1rem}
 
 /* ---------- gallery ---------- */
@@ -243,17 +243,13 @@ em{font-style:italic}
 .info-row:last-of-type{border-bottom:none}
 .info-row .ic{flex:none;width:42px;height:42px;border-radius:50%;background:rgba(126,36,27,.08);color:var(--ox);display:flex;align-items:center;justify-content:center}
 .info-row .ic svg{width:20px;height:20px}
-.info-row .it-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
-.info-row .it-value{font-family:var(--font-display);font-size:1.28rem;line-height:1.3}
+.info-row .it-label{font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
+.info-row .it-value{font-family:var(--font-display);font-size:1.4rem;line-height:1.3}
 .info-row a.it-value:hover{color:var(--ox)}
 
 /* value cards (history) */
 .values-ic{width:78px;height:78px;border-radius:50%;background:rgba(126,36,27,.08);color:var(--ox);display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem}
 .values-ic svg{width:38px;height:38px}
-
-/* footer heading used as a link (Find us) */
-.site-footer .f-col h4 a{color:inherit;display:inline;padding:0;text-decoration:none}
-.site-footer .f-col h4 a:hover{text-decoration:underline;color:var(--beige)}
 
 /* ---------- forms / reservations ---------- */
 .reserve-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
@@ -261,7 +257,7 @@ em{font-style:italic}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.2rem}
 .field{display:flex;flex-direction:column;gap:.4rem}
 .field.full{grid-column:1/-1}
-.field label{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.field label{font-size:.84rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .field label .req{color:var(--ox)}
 .field input,.field select,.field textarea{
   background:#fff;border:1.5px solid var(--line-2);border-radius:9px;padding:.8em .9em;font-size:1rem;color:var(--ink);
@@ -291,14 +287,14 @@ em{font-style:italic}
 .footer-brand .logo-badge{background:var(--beige);border-radius:14px;padding:.6rem;display:inline-block;box-shadow:var(--shadow-sm)}
 .footer-brand .logo-badge img{height:84px;width:auto}
 .footer-brand p{color:#A99F8C;margin-top:1.1rem;font-size:.96rem;max-width:34ch}
-.site-footer h4{font-family:var(--font-body);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--beige);margin-bottom:1.1rem;font-weight:600;opacity:.92}
-.site-footer .f-col a,.site-footer .f-col li{display:block;color:#CFC6B4;padding:.32rem 0;font-size:.97rem;transition:color .2s}
+.site-footer h4{font-family:var(--font-body);font-size:.84rem;letter-spacing:.15em;text-transform:uppercase;color:var(--beige);margin-bottom:1.1rem;font-weight:600;opacity:.92}
+.site-footer .f-col a,.site-footer .f-col li{display:block;color:#CFC6B4;padding:.34rem 0;font-size:1.02rem;transition:color .2s}
 .site-footer .f-col a:hover{color:var(--beige)}
 .social{display:flex;gap:.8rem;margin-top:.4rem}
 .social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(239,233,220,.22);display:flex;align-items:center;justify-content:center;color:#CFC6B4}
 .social a:hover{background:var(--beige);color:var(--brown);border-color:var(--beige)}
 .social svg{width:18px;height:18px}
-.footer-bottom{border-top:1px solid rgba(239,233,220,.14);margin-top:2.5rem;padding-top:1.4rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;font-size:.85rem;color:#9A9080}
+.footer-bottom{border-top:1px solid rgba(239,233,220,.14);margin-top:2.5rem;padding-top:1.4rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;font-size:.92rem;color:#9A9080}
 
 /* ---------- page hero (inner pages) ---------- */
 .page-hero{position:relative;padding-top:calc(var(--header-h) + clamp(2.5rem,6vw,4.5rem));padding-bottom:clamp(2.5rem,6vw,4.5rem);text-align:center;background:linear-gradient(180deg,var(--beige-2),var(--beige));border-bottom:1px solid var(--line)}
