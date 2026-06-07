@@ -84,7 +84,8 @@ em{font-style:italic}
 .section-head{max-width:720px;margin-bottom:clamp(2rem,4vw,3.25rem)}
 .section-head.center{margin-inline:auto;text-align:center}
 .section-head .eyebrow{margin-bottom:1rem}
-.section-head p{margin-top:1rem}
+.section-head p{margin-top:1rem;text-wrap:balance}
+.page-hero p{text-wrap:balance}
 
 /* decorative divider */
 .divider{display:flex;align-items:center;justify-content:center;gap:1rem;color:var(--ox)}
