@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('has-js');</script>
+  <title data-en="Menu — Trágos Kokkinos">Μενού — Τράγος Κόκκινος</title>
+  <meta name="description" data-en-content="Our menu: starters, mains, seafood from the Amvrakikos Gulf, desserts and local wines — traditional Greek cooking with a gourmet twist." content="Το μενού μας: ορεκτικά, κυρίως πιάτα, θαλασσινά από τον Αμβρακικό, γλυκά και τοπικά κρασιά — παραδοσιακή κουζίνα με γκουρμέ ματιά.">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html" aria-label="Τράγος Κόκκινος">
+        <img src="assets/logo.png" alt="Τράγος Κόκκινος" width="50" height="50">
+        <span class="brand-word">Τράγος Κόκκινος</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="menu.html" class="active" aria-current="page" data-en="Menu">Μενού</a></li>
+        <li><a href="history.html" data-en="History">Ιστορία</a></li>
+        <li><a href="gallery.html" data-en="Gallery">Gallery</a></li>
+        <li><a href="directions.html" data-en="Directions">Πρόσβαση</a></li>
+        <li><a href="reservations.html" data-en="Reservations">Κρατήσεις</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-toggle" role="group" aria-label="Language / Γλώσσα">
+          <button type="button" data-lang="el" class="active" aria-pressed="true">EL</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn-solid nav-cta" href="reservations.html" data-en="Reserve">Κράτηση</a>
+        <button class="nav-toggle" aria-label="Menu / Μενού" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow flank" data-en="Our table">Το τραπέζι μας</span>
+        <h1 data-en="The Menu">Το Μενού</h1>
+        <p data-en="Traditional recipes from Epirus and the sea, plated with a gourmet touch. Dishes change with the seasons and the day's catch.">Παραδοσιακές συνταγές της Ηπείρου και της θάλασσας, με γκουρμέ παρουσίαση. Τα πιάτα αλλάζουν με τις εποχές και τη φρέσκια ψαριά.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <nav class="menu-tabs" aria-label="Menu categories">
+          <a href="#starters" data-en="Starters">Ορεκτικά</a>
+          <a href="#mains" data-en="Mains">Κυρίως</a>
+          <a href="#sea" data-en="From the Sea">Θαλασσινά</a>
+          <a href="#desserts" data-en="Desserts">Γλυκά</a>
+          <a href="#drinks" data-en="Wine & Drinks">Κρασιά &amp; Ποτά</a>
+        </nav>
+
+        <!-- STARTERS -->
+        <div class="menu-cat" id="starters" data-reveal>
+          <div class="menu-cat-head">
+            <h2 data-en="Starters">Ορεκτικά</h2>
+            <span class="cat-en" data-en="to begin">για αρχή</span>
+            <span class="rule"></span>
+          </div>
+          <div class="menu-list">
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Cretan Dakos">Ντάκος Κρήτης</span></span><span class="mi-dots"></span><span class="mi-price">7€</span></div>
+              <p class="mi-desc" data-en="Barley rusk, tomato, xinomizithra, olives, oregano.">Παξιμάδι, ντομάτα, ξινομυζήθρα, ελιές, ρίγανη.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Spicy Feta Whip">Τυροκαυτερή</span></span><span class="mi-dots"></span><span class="mi-price">6€</span></div>
+              <p class="mi-desc" data-en="Feta, roasted pepper, smoked paprika.">Φέτα, ψητή πιπεριά, καπνιστή πάπρικα.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Graviera Saganaki">Σαγανάκι Γραβιέρας</span></span><span class="mi-dots"></span><span class="mi-price">8€</span></div>
+              <p class="mi-desc" data-en="Seared graviera with thyme honey and sesame.">Γραβιέρα με θυμαρίσιο μέλι και σουσάμι.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Zucchini Fritters">Κολοκυθοκεφτέδες</span></span><span class="mi-dots"></span><span class="mi-price">7€</span></div>
+              <p class="mi-desc" data-en="With yogurt, mint and lime.">Με γιαούρτι, δυόσμο και λάιμ.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Gourmet Greek Salad">Χωριάτικη Γκουρμέ</span></span><span class="mi-dots"></span><span class="mi-price">9€</span></div>
+              <p class="mi-desc" data-en="Cherry tomatoes, cucumber, capers, whipped feta.">Ντοματίνια, αγγούρι, κάπαρη, κρέμα φέτας.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MAINS -->
+        <div class="menu-cat" id="mains" data-reveal>
+          <div class="menu-cat-head">
+            <h2 data-en="Main Courses">Κυρίως Πιάτα</h2>
+            <span class="cat-en" data-en="from the fire">από τη φωτιά</span>
+            <span class="rule"></span>
+          </div>
+          <div class="menu-list">
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="The Red Goat">Κόκκινος Τράγος</span> <span class="sig-star" aria-hidden="true">★</span></span><span class="mi-dots"></span><span class="mi-price">19€</span></div>
+              <p class="mi-desc" data-en="Kid goat slow-braised in red wine, hilopites, mountain herbs.">Κατσικάκι σιγομαγειρεμένο σε κόκκινο κρασί, χυλοπίτες, μυρωδικά βουνού.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Lemon Kid Goat">Κατσικάκι Λεμονάτο</span></span><span class="mi-dots"></span><span class="mi-price">18€</span></div>
+              <p class="mi-desc" data-en="Confit, with wild greens and potato.">Κονφί, με άγρια χόρτα και πατάτα.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Pork Kontosouvli">Κοντοσούβλι Χοιρινό</span></span><span class="mi-dots"></span><span class="mi-price">15€</span></div>
+              <p class="mi-desc" data-en="Smoked, with orange glaze.">Καπνιστό, με γλάσο πορτοκαλιού.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Beef in Wine">Μοσχάρι Κρασάτο</span></span><span class="mi-dots"></span><span class="mi-price">17€</span></div>
+              <p class="mi-desc" data-en="Slow-cooked, smoked aubergine purée.">Αργομαγειρεμένο, πουρές καπνιστής μελιτζάνας.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Gourmet Stuffed Vegetables">Γεμιστά Γκουρμέ</span></span><span class="mi-dots"></span><span class="mi-price">13€</span></div>
+              <p class="mi-desc" data-en="Bulgur, herbs, aged cheese.">Πλιγούρι, βότανα, ώριμο τυρί.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FROM THE SEA -->
+        <div class="menu-cat" id="sea" data-reveal>
+          <div class="menu-cat-head">
+            <h2 data-en="From the Sea">Θαλασσινά</h2>
+            <span class="cat-en" data-en="Amvrakikos Gulf">Αμβρακικός</span>
+            <span class="rule"></span>
+          </div>
+          <div class="menu-list">
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Amvrakikos Prawns">Γαρίδες Αμβρακικού</span></span><span class="mi-dots"></span><span class="mi-price">16€</span></div>
+              <p class="mi-desc" data-en="Saganaki with ouzo, tomato and feta.">Σαγανάκι με ούζο, ντομάτα και φέτα.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Grilled Octopus">Χταπόδι στη Σχάρα</span></span><span class="mi-dots"></span><span class="mi-price">15€</span></div>
+              <p class="mi-desc" data-en="With Amfilochia fava and capers.">Με φάβα Αμφιλοχίας και κάπαρη.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Preveza Sardines">Σαρδέλα Πρέβεζας</span></span><span class="mi-dots"></span><span class="mi-price">11€</span></div>
+              <p class="mi-desc" data-en="The local specialty, lightly marinated.">Η τοπική σπεσιαλιτέ, ελαφρά μαριναρισμένη.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Seafood Risotto">Ριζότο Θαλασσινών</span></span><span class="mi-dots"></span><span class="mi-price">17€</span></div>
+              <p class="mi-desc" data-en="With saffron and lemon.">Με σαφράν και λεμόνι.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Catch of the Day">Ψάρι του Ψαρά</span> <span class="sig-star" aria-hidden="true">★</span></span><span class="mi-dots"></span><span class="mi-price">18€</span></div>
+              <p class="mi-desc" data-en="Fillet of the day on seasonal greens.">Φιλέτο ημέρας σε χόρτα εποχής.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DESSERTS -->
+        <div class="menu-cat" id="desserts" data-reveal>
+          <div class="menu-cat-head">
+            <h2 data-en="Desserts">Γλυκά</h2>
+            <span class="cat-en" data-en="to finish">για το τέλος</span>
+            <span class="rule"></span>
+          </div>
+          <div class="menu-list">
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Deconstructed Baklava">Μπακλαβάς Γκουρμέ</span></span><span class="mi-dots"></span><span class="mi-price">8€</span></div>
+              <p class="mi-desc" data-en="Walnut, syrup, mastic ice cream.">Καρύδι, σιρόπι, παγωτό μαστίχα.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Galaktoboureko">Γαλακτομπούρεκο</span></span><span class="mi-dots"></span><span class="mi-price">7€</span></div>
+              <p class="mi-desc" data-en="Semolina custard in filo, orange syrup.">Κρέμα σιμιγδαλιού σε φύλλο, σιρόπι πορτοκαλιού.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Yogurt & Honey">Γιαούρτι &amp; Μέλι</span></span><span class="mi-dots"></span><span class="mi-price">6€</span></div>
+              <p class="mi-desc" data-en="With walnuts and spoon sweet.">Με καρύδια και γλυκό κουταλιού.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-cat" id="drinks" data-reveal>
+          <div class="menu-cat-head">
+            <h2 data-en="Wine & Drinks">Κρασιά &amp; Ποτά</h2>
+            <span class="cat-en" data-en="from Epirus">από την Ήπειρο</span>
+            <span class="rule"></span>
+          </div>
+          <div class="menu-list">
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="House Wine (glass)">Κρασί Χύμα (ποτήρι)</span></span><span class="mi-dots"></span><span class="mi-price">4€</span></div>
+              <p class="mi-desc" data-en="White · Rosé · Red, local.">Λευκό · Ροζέ · Κόκκινο, ντόπιο.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Bottle of Epirus">Φιάλη Ηπείρου</span></span><span class="mi-dots"></span><span class="mi-price">18€</span></div>
+              <p class="mi-desc" data-en="Selection from local vineyards.">Επιλογή από τοπικά αμπέλια.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Tsipouro">Τσίπουρο</span></span><span class="mi-dots"></span><span class="mi-price">6€</span></div>
+              <p class="mi-desc" data-en="Carafe, with or without anise.">Καραφάκι, με ή χωρίς γλυκάνισο.</p>
+            </div>
+            <div class="menu-item">
+              <div class="mi-top"><span class="mi-name"><span data-en="Ouzo">Ούζο</span></span><span class="mi-dots"></span><span class="mi-price">6€</span></div>
+              <p class="mi-desc" data-en="Carafe.">Καραφάκι.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="menu-note" data-en="★ House specialty · Please tell us about any allergies — we'll guide you happily.">★ Σπεσιαλιτέ · Ενημερώστε μας για τυχόν αλλεργίες — με χαρά θα σας καθοδηγήσουμε.</p>
+
+        <div style="text-align:center;margin-top:2rem" data-reveal>
+          <a class="btn btn-solid" href="reservations.html" data-en="Reserve a table">Κράτηση τραπεζιού</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-badge"><img src="assets/logo.png" alt="Τράγος Κόκκινος" width="84" height="84"></span>
+          <p data-en="Traditional Greek cooking with a gourmet soul, in the heart of Preveza.">Παραδοσιακή ελληνική κουζίνα με γκουρμέ ψυχή, στην καρδιά της Πρέβεζας.</p>
+        </div>
+        <div class="f-col">
+          <h4 data-en="Explore">Εξερευνήστε</h4>
+          <a href="menu.html" data-en="Menu">Μενού</a>
+          <a href="history.html" data-en="History">Ιστορία</a>
+          <a href="gallery.html" data-en="Gallery">Gallery</a>
+          <a href="directions.html" data-en="Directions">Πρόσβαση</a>
+          <a href="reservations.html" data-en="Reservations">Κρατήσεις</a>
+        </div>
+        <div class="f-col">
+          <h4 data-en="Hours">Ώρες</h4>
+          <ul>
+            <li data-en="Monday – Sunday">Δευτέρα – Κυριακή</li>
+            <li>13:00 – 24:00</li>
+          </ul>
+          <h4 style="margin-top:1.5rem" data-en="Find us">Βρείτε μας</h4>
+          <a href="directions.html" data-en="Preveza Waterfront, 481 00">Παραλία Πρέβεζας, 481 00</a>
+        </div>
+        <div class="f-col">
+          <h4 data-en="Contact">Επικοινωνία</h4>
+          <a href="tel:+302682000000">+30 26820 00000</a>
+          <a href="mailto:hello@tragoskokkinos.gr">hello@tragoskokkinos.gr</a>
+          <div class="social">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Τράγος Κόκκινος · <span data-en="Preveza, Greece">Πρέβεζα, Ελλάδα</span></span>
+        <span data-en="Crafted with meraki">Φτιαγμένο με μεράκι</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+
+# Brainstorm visual companion (local only — not part of the site)
+.superpowers/
+
+# Node (not required for this static site)
+node_modules/

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('has-js');</script>
+  <title data-en="Gallery — Trágos Kokkinos">Gallery — Τράγος Κόκκινος</title>
+  <meta name="description" data-en-content="A gallery of dishes and atmosphere at Trágos Kokkinos in Preveza." content="Μια συλλογή από πιάτα και στιγμές ατμόσφαιρας στον Τράγο Κόκκινο, στην Πρέβεζα.">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html" aria-label="Τράγος Κόκκινος">
+        <img src="assets/logo.png" alt="Τράγος Κόκκινος" width="50" height="50">
+        <span class="brand-word">Τράγος Κόκκινος</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="menu.html" data-en="Menu">Μενού</a></li>
+        <li><a href="history.html" data-en="History">Ιστορία</a></li>
+        <li><a href="gallery.html" class="active" aria-current="page" data-en="Gallery">Gallery</a></li>
+        <li><a href="directions.html" data-en="Directions">Πρόσβαση</a></li>
+        <li><a href="reservations.html" data-en="Reservations">Κρατήσεις</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-toggle" role="group" aria-label="Language / Γλώσσα">
+          <button type="button" data-lang="el" class="active" aria-pressed="true">EL</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn-solid nav-cta" href="reservations.html" data-en="Reserve">Κράτηση</a>
+        <button class="nav-toggle" aria-label="Menu / Μενού" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow flank" data-en="A taste in pictures">Μια γεύση σε εικόνες</span>
+        <h1 data-en="Gallery">Συλλογή</h1>
+        <p data-en="Dishes from our kitchen and moments from our table. Tap any photo to enlarge.">Πιάτα από την κουζίνα μας και στιγμές από το τραπέζι μας. Πατήστε σε μια φωτογραφία για μεγέθυνση.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="masonry" data-reveal>
+          <figure class="g-item"><img src="assets/img/dining.jpg" alt="Candlelit gourmet plate with wine" loading="lazy" decoding="async"></figure>
+          <figure class="g-item"><img src="assets/img/sig-1.jpg" alt="Grilled meat skewers and vegetables" loading="lazy" decoding="async"></figure>
+          <figure class="g-item"><img src="assets/img/g7.jpg" alt="Greek sea view with whitewashed steps" loading="lazy" decoding="async"></figure>
+          <figure class="g-item"><img src="assets/img/g1.jpg" alt="Rustic plates of meat and greens" loading="lazy" decoding="async"></figure>
+          <figure class="g-item"><img src="assets/img/interior.jpg" alt="Warm restaurant interior" loading="lazy" decoding="async"></figure>
+          <figure class="g-item"><img src="assets/img/g4.jpg" alt="Pan-roasted fish with lemon" loading="lazy" decoding="async"></figure>
+          <figure class="g-item"><img src="assets/img/sig-2.jpg" alt="Grilled seafood plate" loading="lazy" decoding="async"></figure>
+          <figure class="g-item"><img src="assets/img/g5.jpg" alt="Greek salad with feta and olives" loading="lazy" decoding="async"></figure>
+          <figure class="g-item"><img src="assets/img/g2.jpg" alt="Grilled ribs on a wooden board" loading="lazy" decoding="async"></figure>
+          <figure class="g-item"><img src="assets/img/sig-3.jpg" alt="Fish fillet on seasonal greens" loading="lazy" decoding="async"></figure>
+          <figure class="g-item"><img src="assets/img/g3.jpg" alt="Roasted pork with apple and greens" loading="lazy" decoding="async"></figure>
+          <figure class="g-item"><img src="assets/img/g6.jpg" alt="Gourmet grilled sandwich with rocket" loading="lazy" decoding="async"></figure>
+          <figure class="g-item"><img src="assets/img/hero.jpg" alt="Seaside dining terrace at sunset" loading="lazy" decoding="async"></figure>
+          <figure class="g-item"><img src="assets/img/g8.jpg" alt="Rustic pan of pasta with herbs" loading="lazy" decoding="async"></figure>
+        </div>
+
+        <div style="text-align:center;margin-top:clamp(2rem,4vw,3rem)" data-reveal>
+          <a class="btn btn-solid" href="reservations.html" data-en="Reserve a table">Κράτηση τραπεζιού</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-badge"><img src="assets/logo.png" alt="Τράγος Κόκκινος" width="84" height="84"></span>
+          <p data-en="Traditional Greek cooking with a gourmet soul, in the heart of Preveza.">Παραδοσιακή ελληνική κουζίνα με γκουρμέ ψυχή, στην καρδιά της Πρέβεζας.</p>
+        </div>
+        <div class="f-col">
+          <h4 data-en="Explore">Εξερευνήστε</h4>
+          <a href="menu.html" data-en="Menu">Μενού</a>
+          <a href="history.html" data-en="History">Ιστορία</a>
+          <a href="gallery.html" data-en="Gallery">Gallery</a>
+          <a href="directions.html" data-en="Directions">Πρόσβαση</a>
+          <a href="reservations.html" data-en="Reservations">Κρατήσεις</a>
+        </div>
+        <div class="f-col">
+          <h4 data-en="Hours">Ώρες</h4>
+          <ul>
+            <li data-en="Monday – Sunday">Δευτέρα – Κυριακή</li>
+            <li>13:00 – 24:00</li>
+          </ul>
+          <h4 style="margin-top:1.5rem" data-en="Find us">Βρείτε μας</h4>
+          <a href="directions.html" data-en="Preveza Waterfront, 481 00">Παραλία Πρέβεζας, 481 00</a>
+        </div>
+        <div class="f-col">
+          <h4 data-en="Contact">Επικοινωνία</h4>
+          <a href="tel:+302682000000">+30 26820 00000</a>
+          <a href="mailto:hello@tragoskokkinos.gr">hello@tragoskokkinos.gr</a>
+          <div class="social">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Τράγος Κόκκινος · <span data-en="Preveza, Greece">Πρέβεζα, Ελλάδα</span></span>
+        <span data-en="Crafted with meraki">Φτιαγμένο με μεράκι</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

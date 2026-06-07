@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('has-js');</script>
+  <title data-en="Reservations — Trágos Kokkinos">Κρατήσεις — Τράγος Κόκκινος</title>
+  <meta name="description" data-en-content="Book a table at Trágos Kokkinos in Preveza — request a reservation online or call us." content="Κλείστε τραπέζι στον Τράγο Κόκκινο στην Πρέβεζα — αίτημα κράτησης online ή τηλεφωνικά.">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html" aria-label="Τράγος Κόκκινος">
+        <img src="assets/logo.png" alt="Τράγος Κόκκινος" width="50" height="50">
+        <span class="brand-word">Τράγος Κόκκινος</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="menu.html" data-en="Menu">Μενού</a></li>
+        <li><a href="history.html" data-en="History">Ιστορία</a></li>
+        <li><a href="gallery.html" data-en="Gallery">Gallery</a></li>
+        <li><a href="directions.html" data-en="Directions">Πρόσβαση</a></li>
+        <li><a href="reservations.html" class="active" aria-current="page" data-en="Reservations">Κρατήσεις</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-toggle" role="group" aria-label="Language / Γλώσσα">
+          <button type="button" data-lang="el" class="active" aria-pressed="true">EL</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn-solid nav-cta" href="reservations.html" data-en="Reserve">Κράτηση</a>
+        <button class="nav-toggle" aria-label="Menu / Μενού" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow flank" data-en="Reservations">Κρατήσεις</span>
+        <h1 data-en="Book a table">Κλείστε τραπέζι</h1>
+        <p data-en="Send us a request and we'll confirm by phone. We look forward to hosting you.">Στείλτε μας ένα αίτημα και θα επιβεβαιώσουμε τηλεφωνικά. Ανυπομονούμε να σας φιλοξενήσουμε.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container reserve-grid">
+        <div class="form-card" data-reveal>
+          <form class="reserve-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate
+            data-el-invalid="Συμπληρώστε τα υποχρεωτικά πεδία." data-en-invalid="Please complete the required fields."
+            data-el-demo="Οι online κρατήσεις θα ενεργοποιηθούν σύντομα — στείλτε μας email ή καλέστε μας." data-en-demo="Online booking isn't connected yet — email us or give us a call."
+            data-el-ok="Ευχαριστούμε! Λάβαμε το αίτημά σας και θα επιβεβαιώσουμε σύντομα." data-en-ok="Thank you! We've received your request and will confirm shortly."
+            data-el-error="Κάτι πήγε στραβά. Καλέστε μας στο +30 26820 00000." data-en-error="Something went wrong. Please call us on +30 26820 00000.">
+            <input type="hidden" name="_subject" value="Νέα κράτηση — Τράγος Κόκκινος / New reservation">
+            <div class="form-grid">
+              <div class="field">
+                <label for="r-name"><span data-en="Full name">Ονοματεπώνυμο</span> <span class="req" aria-hidden="true">*</span></label>
+                <input id="r-name" name="name" type="text" required autocomplete="name" placeholder="Το όνομά σας" data-en-placeholder="Your name">
+                <span class="err" data-en="Please enter your name.">Συμπληρώστε το όνομά σας.</span>
+              </div>
+              <div class="field">
+                <label for="r-phone"><span data-en="Phone">Τηλέφωνο</span> <span class="req" aria-hidden="true">*</span></label>
+                <input id="r-phone" name="phone" type="tel" required autocomplete="tel" placeholder="π.χ. 69xxxxxxxx" data-en-placeholder="e.g. 69xxxxxxxx">
+                <span class="err" data-en="Please enter a phone number.">Συμπληρώστε τηλέφωνο.</span>
+              </div>
+              <div class="field">
+                <label for="r-email"><span data-en="Email (optional)">Email (προαιρετικά)</span></label>
+                <input id="r-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" data-en-placeholder="you@example.com">
+                <span class="err" data-en="Please enter a valid email.">Μη έγκυρο email.</span>
+              </div>
+              <div class="field">
+                <label for="r-guests"><span data-en="Guests">Άτομα</span> <span class="req" aria-hidden="true">*</span></label>
+                <select id="r-guests" name="guests" required>
+                  <option value="" disabled selected data-en="Select…">Επιλέξτε…</option>
+                  <option>1</option><option>2</option><option>3</option><option>4</option>
+                  <option>5</option><option>6</option><option>7</option><option>8+</option>
+                </select>
+                <span class="err" data-en="Select party size.">Επιλέξτε άτομα.</span>
+              </div>
+              <div class="field">
+                <label for="r-date"><span data-en="Date">Ημερομηνία</span> <span class="req" aria-hidden="true">*</span></label>
+                <input id="r-date" name="date" type="date" required>
+                <span class="err" data-en="Choose a date.">Επιλέξτε ημερομηνία.</span>
+              </div>
+              <div class="field">
+                <label for="r-time"><span data-en="Time">Ώρα</span> <span class="req" aria-hidden="true">*</span></label>
+                <select id="r-time" name="time" required>
+                  <option value="" disabled selected data-en="Select…">Επιλέξτε…</option>
+                  <option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option>
+                  <option>15:00</option><option>15:30</option><option>18:00</option><option>18:30</option>
+                  <option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option>
+                  <option>21:00</option><option>21:30</option><option>22:00</option><option>22:30</option><option>23:00</option>
+                </select>
+                <span class="err" data-en="Choose a time.">Επιλέξτε ώρα.</span>
+              </div>
+              <div class="field full">
+                <label for="r-notes"><span data-en="Notes (optional)">Σημειώσεις (προαιρετικά)</span></label>
+                <textarea id="r-notes" name="notes" placeholder="Αλλεργίες, καρεκλάκι μωρού, ειδική περίσταση…" data-en-placeholder="Allergies, high chair, special occasion…"></textarea>
+              </div>
+            </div>
+            <div class="form-feedback" role="status" aria-live="polite"></div>
+            <button class="btn btn-solid btn-block" type="submit" style="margin-top:1.3rem" data-en="Send reservation request">Αποστολή αιτήματος</button>
+            <p style="font-size:.82rem;color:var(--muted);margin-top:.9rem" data-en="We confirm every booking by phone. For same-day reservations, please call us.">Επιβεβαιώνουμε κάθε κράτηση τηλεφωνικά. Για αυθημερόν κρατήσεις, καλέστε μας.</p>
+          </form>
+        </div>
+
+        <aside class="reserve-aside" data-reveal data-reveal-delay="1">
+          <div class="aside-card">
+            <span class="eyebrow" style="color:#F3EAD9" data-en="Prefer to call?">Προτιμάτε να καλέσετε;</span>
+            <h3 style="margin-top:.5rem" data-en="We'd love to hear from you">Θα χαρούμε να σας ακούσουμε</h3>
+            <a class="phone-big" href="tel:+302682000000">+30 26820 00000</a>
+            <p data-en="Daily 13:00 – 24:00. For groups of 8 or more, calling is best.">Καθημερινά 13:00 – 24:00. Για παρέες 8+ ατόμων, προτιμήστε τηλέφωνο.</p>
+            <a class="btn btn-light" href="tel:+302682000000" data-en="Call now">Καλέστε τώρα</a>
+          </div>
+          <div class="info-card">
+            <div class="info-row" style="padding-top:0">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+              <div>
+                <div class="it-label" data-en="Hours">Ώρες</div>
+                <div class="it-value" data-en="Mon – Sun · 13:00 – 24:00">Δευτ – Κυρ · 13:00 – 24:00</div>
+              </div>
+            </div>
+            <div class="info-row" style="padding-bottom:0">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span>
+              <div>
+                <div class="it-label" data-en="Where">Πού</div>
+                <div class="it-value" data-en="Preveza Waterfront">Παραλία Πρέβεζας</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-badge"><img src="assets/logo.png" alt="Τράγος Κόκκινος" width="84" height="84"></span>
+          <p data-en="Traditional Greek cooking with a gourmet soul, in the heart of Preveza.">Παραδοσιακή ελληνική κουζίνα με γκουρμέ ψυχή, στην καρδιά της Πρέβεζας.</p>
+        </div>
+        <div class="f-col">
+          <h4 data-en="Explore">Εξερευνήστε</h4>
+          <a href="menu.html" data-en="Menu">Μενού</a>
+          <a href="history.html" data-en="History">Ιστορία</a>
+          <a href="gallery.html" data-en="Gallery">Gallery</a>
+          <a href="directions.html" data-en="Directions">Πρόσβαση</a>
+          <a href="reservations.html" data-en="Reservations">Κρατήσεις</a>
+        </div>
+        <div class="f-col">
+          <h4 data-en="Hours">Ώρες</h4>
+          <ul>
+            <li data-en="Monday – Sunday">Δευτέρα – Κυριακή</li>
+            <li>13:00 – 24:00</li>
+          </ul>
+          <h4 style="margin-top:1.5rem" data-en="Find us">Βρείτε μας</h4>
+          <a href="directions.html" data-en="Preveza Waterfront, 481 00">Παραλία Πρέβεζας, 481 00</a>
+        </div>
+        <div class="f-col">
+          <h4 data-en="Contact">Επικοινωνία</h4>
+          <a href="tel:+302682000000">+30 26820 00000</a>
+          <a href="mailto:hello@tragoskokkinos.gr">hello@tragoskokkinos.gr</a>
+          <div class="social">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Τράγος Κόκκινος · <span data-en="Preveza, Greece">Πρέβεζα, Ελλάδα</span></span>
+        <span data-en="Crafted with meraki">Φτιαγμένο με μεράκι</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
