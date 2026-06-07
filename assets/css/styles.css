@@ -1,12 +1,12 @@
 /* ============================================================
-   Trágos Kokkinos — Aegean Parchment design system
+   Trágos Kokkinos - Aegean Parchment design system
    Fonts: Cormorant Garamond (display) + Spectral (body)
    ============================================================ */
 
 :root{
   /* palette (from the logo) */
-  --ox:#7E241B;          /* oxblood red — headings, buttons, accents */
-  --ox-deep:#5E1A14;     /* deep red — hovers, dark bands */
+  --ox:#7E241B;          /* oxblood red - headings, buttons, accents */
+  --ox-deep:#5E1A14;     /* deep red - hovers, dark bands */
   --ox-bright:#9A3326;   /* lighter oxblood for subtle fills */
   --beige:#EFE9DC;       /* main background */
   --beige-2:#E7DFCF;     /* slightly deeper beige */

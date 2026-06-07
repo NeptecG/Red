@@ -1,4 +1,4 @@
-# Trágos Kokkinos — Build Plan
+# Trágos Kokkinos - Build Plan
 
 Spec: `docs/spec.md`. Static multi-page site, bilingual (EL default + EN toggle), Aegean Parchment style.
 
