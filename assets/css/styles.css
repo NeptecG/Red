@@ -4,7 +4,7 @@
    ============================================================ */
 
 :root{
-  color-scheme:light;   /* light-only site; discourages browser auto/forced dark mode */
+  color-scheme:only light;   /* the "only" keyword turns OFF browser Auto Dark Theme (Chromium/Brave force-dark) */
   /* palette (from the logo) */
   --ox:#7E241B;          /* oxblood red - headings, buttons, accents */
   --ox-deep:#5E1A14;     /* deep red - hovers, dark bands */
