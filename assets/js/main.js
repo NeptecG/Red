@@ -250,6 +250,63 @@
     });
   }
 
+  /* ---------- team member modal (click a card to read the full story) ---------- */
+  var teamCards = doc.querySelectorAll('.team-card');
+  if (teamCards.length) {
+    var personIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>';
+    var tm = doc.createElement('div');
+    tm.className = 'team-modal';
+    tm.setAttribute('role', 'dialog');
+    tm.setAttribute('aria-modal', 'true');
+    tm.innerHTML =
+      '<div class="tm-panel">' +
+        '<button class="tm-close" aria-label="Close">✕</button>' +
+        '<div class="tm-photo"></div>' +
+        '<div class="tm-body">' +
+          '<span class="tm-role"></span>' +
+          '<h3 class="tm-name"></h3>' +
+          '<div class="tm-story"></div>' +
+        '</div>' +
+      '</div>';
+    doc.body.appendChild(tm);
+    var tmPhoto = tm.querySelector('.tm-photo');
+    var tmRole = tm.querySelector('.tm-role');
+    var tmName = tm.querySelector('.tm-name');
+    var tmStory = tm.querySelector('.tm-story');
+    var tmPanel = tm.querySelector('.tm-panel');
+
+    function openTeam(card) {
+      var roleEl = card.querySelector('.team-role');
+      var nameEl = card.querySelector('.team-name');
+      var storyEl = card.querySelector('.team-story');
+      tmRole.textContent = roleEl ? roleEl.textContent : '';
+      tmName.textContent = nameEl ? nameEl.textContent : '';
+      tmStory.textContent = storyEl ? storyEl.textContent : '';
+      var photo = card.getAttribute('data-photo');
+      tmPhoto.innerHTML = photo
+        ? '<img alt="' + (nameEl ? nameEl.textContent : '') + '" src="' + photo + '">'
+        : personIcon;
+      tm.classList.add('open');
+      doc.body.style.overflow = 'hidden';
+      tmPanel.scrollTop = 0;
+    }
+    function closeTeam() { tm.classList.remove('open'); doc.body.style.overflow = ''; }
+
+    teamCards.forEach(function (card) {
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('role', 'button');
+      card.addEventListener('click', function () { openTeam(card); });
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openTeam(card); }
+      });
+    });
+    tm.querySelector('.tm-close').addEventListener('click', closeTeam);
+    tm.addEventListener('click', function (e) { if (e.target === tm) closeTeam(); });
+    window.addEventListener('keydown', function (e) {
+      if (tm.classList.contains('open') && e.key === 'Escape') closeTeam();
+    });
+  }
+
   /* ---------- reservation form ---------- */
   var form = doc.querySelector('form.reserve-form');
   if (form) {

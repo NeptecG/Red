@@ -247,12 +247,31 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
 
 /* people / team */
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.4vw,1.8rem)}
-.team-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(1.7rem,3vw,2.4rem) clamp(1.4rem,2.6vw,2rem);text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow-sm)}
+.team-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(1.7rem,3vw,2.4rem) clamp(1.4rem,2.6vw,2rem) clamp(2.7rem,4vw,3.2rem);text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow-sm);cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)}
+.team-card:hover,.team-card:focus-visible{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--line-2)}
 .team-card::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--ox),var(--ox-bright))}
-.team-mono{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:var(--ox);color:var(--beige);font-family:var(--font-display);font-weight:700;font-size:1.35rem;letter-spacing:.04em;margin-bottom:1.1rem;box-shadow:0 8px 18px rgba(126,36,27,.28)}
+.team-avatar{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:linear-gradient(160deg,var(--ox),var(--ox-deep));color:var(--beige);margin-bottom:1.1rem;box-shadow:0 8px 18px rgba(126,36,27,.28)}
+.team-avatar svg{width:30px;height:30px}
 .team-role{display:block;font-family:var(--font-body);font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ox);margin-bottom:.35rem}
 .team-name{font-family:var(--font-display);font-size:1.55rem;color:var(--ink);margin-bottom:.7rem;line-height:1.1}
-.team-bio{font-size:.95rem;color:var(--muted);max-width:none;margin:0 auto}
+.team-story-wrap{position:relative;max-height:7.4em;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,#000 56%,transparent 100%);mask-image:linear-gradient(180deg,#000 56%,transparent 100%)}
+.team-story{font-size:.95rem;color:var(--muted);max-width:none;line-height:1.7;margin:0}
+.team-more{position:absolute;left:0;right:0;bottom:clamp(1rem,2vw,1.4rem);font-family:var(--font-body);font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ox)}
+
+/* team member modal */
+.team-modal{position:fixed;inset:0;z-index:200;background:rgba(20,17,14,.8);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:clamp(1rem,4vw,2.5rem);opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility .3s}
+.team-modal.open{opacity:1;visibility:visible}
+.tm-panel{background:var(--paper);border-radius:var(--radius);max-width:560px;width:100%;max-height:88vh;overflow:auto;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.5);transform:translateY(14px) scale(.98);transition:transform .35s var(--ease)}
+.team-modal.open .tm-panel{transform:none}
+.tm-photo{position:relative;width:100%;aspect-ratio:4/3;background:linear-gradient(160deg,var(--ox),var(--ox-deep));display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tm-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.tm-photo svg{width:72px;height:72px;color:rgba(239,233,220,.55)}
+.tm-body{padding:clamp(1.5rem,3.5vw,2.3rem)}
+.tm-role{display:block;font-family:var(--font-body);font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ox);margin-bottom:.3rem}
+.tm-name{font-family:var(--font-display);font-size:clamp(1.7rem,3vw,2.1rem);color:var(--ink);margin-bottom:.9rem;line-height:1.05}
+.tm-story{color:var(--muted);font-size:1rem;line-height:1.72;white-space:pre-line}
+.tm-close{position:absolute;top:.8rem;right:.8rem;z-index:2;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(20,17,14,.5);color:var(--beige);font-size:1.2rem;border:1px solid rgba(239,233,220,.25);backdrop-filter:blur(4px);transition:background .2s,border-color .2s}
+.tm-close:hover{background:var(--ox);border-color:var(--ox)}
 
 /* reservation aside note (two lines) */
 .resv-note{margin-top:.4rem}
