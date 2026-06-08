@@ -82,7 +82,7 @@
     b.addEventListener('click', function () { setLang(b.dataset.lang); });
   });
 
-  /* ---------- scroll reveal (two-way: replays when re-entering viewport) ---------- */
+  /* ---------- scroll reveal (one-time: animate in once, stay visible) ---------- */
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var revealables = doc.querySelectorAll('[data-reveal]');
   if (reduce || !('IntersectionObserver' in window)) {
@@ -90,7 +90,7 @@
   } else {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        entry.target.classList.toggle('in', entry.isIntersecting);
+        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     revealables.forEach(function (el) { io.observe(el); });
