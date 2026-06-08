@@ -96,7 +96,7 @@
     revealables.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---------- footer brand: two-way reveal (replays on every scroll into view) ---------- */
+  /* ---------- footer brand: two-way reveal (fires ~100px before entering view) ---------- */
   if (!reduce && 'IntersectionObserver' in window) {
     var repeatEls = doc.querySelectorAll('[data-reveal-repeat]');
     if (repeatEls.length) {
@@ -104,7 +104,10 @@
         entries.forEach(function (entry) {
           entry.target.classList.toggle('in', entry.isIntersecting);
         });
-      }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+      }, { threshold: 0.05, rootMargin: '0px 0px 100px 0px' });
+      /* rootMargin bottom 100px: extends the "seen" zone 100px below the viewport
+         so the animation begins as the user scrolls near the footer,
+         not only after the element is already on screen */
       repeatEls.forEach(function (el) { ioRepeat.observe(el); });
     }
   }
