@@ -203,7 +203,7 @@ html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
 .hero-inner{position:relative;z-index:2;padding-bottom:clamp(3.5rem,8vw,6rem);padding-top:calc(var(--header-h) + 2rem);max-width:880px}
 .hero .eyebrow{color:#F2ECDF;}
 .hero .eyebrow::before,.hero .eyebrow::after{background:#F2ECDF;opacity:.7}
-.hero h1{color:var(--ox);margin:1.1rem 0 .4rem;text-shadow:0 1px 1px rgba(0,0,0,.55),0 2px 18px rgba(0,0,0,.55),0 0 36px rgba(0,0,0,.4)}
+.hero h1{color:var(--beige);margin:1.1rem 0 .4rem;text-shadow:0 1px 1px rgba(0,0,0,.55),0 2px 18px rgba(0,0,0,.55),0 0 36px rgba(0,0,0,.4)}
 .hero .tagline{font-family:var(--font-display);font-style:italic;font-size:clamp(1.3rem,2.8vw,2rem);color:#F3EAD9;font-weight:500}
 .hero-actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
 .scroll-cue{display:none}
