@@ -135,6 +135,7 @@
             img.style.animation = 'none';
             img.getBoundingClientRect();
             img.style.animation = '';
+            img.style.animationPlayState = 'running';
           }
           if (entry.isIntersecting) seen = true;
         });
