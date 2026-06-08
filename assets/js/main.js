@@ -22,7 +22,7 @@
       introEl.classList.add('si-out');
       setTimeout(function () {
         root.classList.remove('tk-intro-on'); /* start hero zoom 400ms before fade ends */
-      }, 2800);
+      }, 2900);
       setTimeout(function () {
         introEl.style.display = 'none';
       }, 4000);
