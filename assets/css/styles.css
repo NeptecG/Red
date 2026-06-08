@@ -163,8 +163,9 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
   will-change:opacity;
 }
 #site-intro.si-out{opacity:0;pointer-events:none}
-.si-inner{display:flex;align-items:center;justify-content:center}
-.si-inner img{width:clamp(220px,38vw,420px);height:auto;animation:siIn .6s var(--ease) both}
+.si-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(.4rem,1.2vw,.8rem)}
+.si-welcome{font-family:var(--font-display);font-weight:700;font-size:clamp(1rem,2.2vw,1.6rem);color:var(--ox);letter-spacing:.02em;line-height:1;animation:siIn .5s var(--ease) both}
+.si-inner img{width:clamp(220px,38vw,420px);height:auto;animation:siIn .6s .12s var(--ease) both}
 @keyframes siIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 /* keep hero zoom paused while splash is active - starts fresh on reveal */
 html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
