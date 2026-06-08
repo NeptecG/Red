@@ -14,7 +14,7 @@
   --paper:#FBF8F1;       /* cards / surfaces */
   --brown:#221E18;       /* footer only */
   --ink:#2A201C;         /* body text (warm espresso) */
-  --muted:#6F6557;       /* secondary text (warm stone) */
+  --muted:#544A3E;       /* secondary text (warm stone) — darkened for WCAG AA */
   --line:#E0D7C5;        /* hairline borders */
   --line-2:#D4C8B2;
 
@@ -108,7 +108,7 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
 .btn-solid:hover{background:var(--ox-deep);transform:translateY(-2px);box-shadow:0 14px 30px rgba(126,36,27,.34)}
 .btn-ghost{border-color:var(--ox);color:var(--ox)}
 .btn-ghost:hover{background:var(--ox);color:var(--beige);transform:translateY(-2px)}
-.btn-light{border-color:rgba(239,233,220,.7);color:var(--beige)}
+.btn-light{border-color:rgba(239,233,220,1);color:var(--beige);background:rgba(239,233,220,.08)}
 .btn-light:hover{background:var(--beige);color:var(--ox);transform:translateY(-2px)}
 .btn-block{width:100%}
 .btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
@@ -238,7 +238,7 @@ html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
 .band .container{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem;padding-block:clamp(2.25rem,4vw,3.25rem)}
 .band h2{color:var(--beige);font-size:clamp(1.7rem,3vw,2.5rem)}
 .band .band-info{display:flex;flex-wrap:wrap;gap:2.2rem}
-.band .band-info .bi-label{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;opacity:.8;margin-bottom:.3rem}
+.band .band-info .bi-label{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.3rem}
 .band .band-info .bi-value{font-family:var(--font-display);font-size:1.3rem}
 .band a.bi-value:hover{text-decoration:underline}
 
@@ -432,8 +432,10 @@ html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
   .masonry{columns:1}
   .brand .brand-word{display:none}
   .nav-actions{gap:.6rem}
-  .nav-cta{display:inline-flex;padding:.6em 1em;font-size:.7rem;letter-spacing:.1em}
+  .nav-cta{display:inline-flex;padding:.75em 1.2em;font-size:.75rem;letter-spacing:.1em;min-height:44px}
   .hero{min-height:88svh}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn{width:100%;justify-content:center}
   .band .container{flex-direction:column;align-items:flex-start}
 }
 
