@@ -96,6 +96,19 @@
     revealables.forEach(function (el) { io.observe(el); });
   }
 
+  /* ---------- footer brand: two-way reveal (replays on every scroll into view) ---------- */
+  if (!reduce && 'IntersectionObserver' in window) {
+    var repeatEls = doc.querySelectorAll('[data-reveal-repeat]');
+    if (repeatEls.length) {
+      var ioRepeat = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          entry.target.classList.toggle('in', entry.isIntersecting);
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+      repeatEls.forEach(function (el) { ioRepeat.observe(el); });
+    }
+  }
+
   /* ---------- hero zoom: restart animation when scrolling back to top ---------- */
   if (!reduce && 'IntersectionObserver' in window) {
     var heroBgImg = doc.querySelector('.hero-bg img');
