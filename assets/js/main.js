@@ -22,7 +22,9 @@
       introEl.classList.add('si-out');
       setTimeout(function () {
         introEl.style.display = 'none';
-        root.classList.remove('tk-intro-on'); /* start hero zoom after splash is fully gone */
+        setTimeout(function () {
+          root.classList.remove('tk-intro-on'); /* start hero zoom 300ms after fade completes */
+        }, 300);
       }, 4000);
     }, 1000);
   }
