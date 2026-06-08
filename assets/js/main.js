@@ -68,6 +68,9 @@
     doc.querySelectorAll('[data-en]').forEach(function (el) {
       if (el.dataset.el === undefined) el.dataset.el = (el.textContent || '').trim();
     });
+    doc.querySelectorAll('[data-en-html]').forEach(function (el) {
+      if (el.dataset.elHtml === undefined) el.dataset.elHtml = el.innerHTML;
+    });
     doc.querySelectorAll('[data-en-placeholder]').forEach(function (el) {
       if (el.dataset.elPlaceholder === undefined) el.dataset.elPlaceholder = el.getAttribute('placeholder') || '';
     });
@@ -84,6 +87,9 @@
     root.setAttribute('lang', en ? 'en' : 'el');
     doc.querySelectorAll('[data-en]').forEach(function (el) {
       el.textContent = en ? el.dataset.en : el.dataset.el;
+    });
+    doc.querySelectorAll('[data-en-html]').forEach(function (el) {
+      el.innerHTML = en ? el.dataset.enHtml : el.dataset.elHtml;
     });
     doc.querySelectorAll('[data-en-placeholder]').forEach(function (el) {
       el.setAttribute('placeholder', en ? el.dataset.enPlaceholder : el.dataset.elPlaceholder);
