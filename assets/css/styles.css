@@ -165,7 +165,7 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
 .hero h1{color:var(--ox);margin:1.1rem 0 .4rem;text-shadow:0 1px 1px rgba(0,0,0,.55),0 2px 18px rgba(0,0,0,.55),0 0 36px rgba(0,0,0,.4)}
 .hero .tagline{font-family:var(--font-display);font-style:italic;font-size:clamp(1.3rem,2.8vw,2rem);color:#F3EAD9;font-weight:500}
 .hero-actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
-.scroll-cue{position:absolute;left:50%;bottom:1.4rem;transform:translateX(-50%);z-index:2;color:var(--beige);opacity:.8;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.scroll-cue{display:none}
 .scroll-cue::after{content:"";width:1px;height:34px;background:linear-gradient(var(--beige),transparent);animation:cue 2s var(--ease) infinite}
 @keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
@@ -367,8 +367,8 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
     transform:translateY(-120%);opacity:0;visibility:hidden;
     transition:transform .35s var(--ease),opacity .25s var(--ease),visibility .35s;
   }
-  .nav-links a{width:100%;padding:.85rem 0;border-bottom:1px solid var(--line);font-size:1.05rem}
-  .nav-links a::after{display:none}
+  .nav-links a{display:block;width:100%;padding:.85rem 0;border-bottom:1px solid var(--line);font-size:1.05rem}
+  .nav-links a::after,.nav-links a.active::after,.nav-links a:hover::after{display:none;content:none}
   .nav-open .nav-links{transform:translateY(0);opacity:1;visibility:visible}
   .team-grid{grid-template-columns:1fr;max-width:420px;margin-inline:auto}
   .nav-toggle{display:flex}
@@ -390,7 +390,6 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
   .nav-actions{gap:.6rem}
   .nav-cta{display:inline-flex;padding:.6em 1em;font-size:.7rem;letter-spacing:.1em}
   .hero{min-height:88svh}
-  .scroll-cue{display:none}
   .band .container{flex-direction:column;align-items:flex-start}
 }
 

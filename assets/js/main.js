@@ -82,7 +82,7 @@
     b.addEventListener('click', function () { setLang(b.dataset.lang); });
   });
 
-  /* ---------- scroll reveal ---------- */
+  /* ---------- scroll reveal (two-way: replays when re-entering viewport) ---------- */
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var revealables = doc.querySelectorAll('[data-reveal]');
   if (reduce || !('IntersectionObserver' in window)) {
@@ -90,10 +90,30 @@
   } else {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+        entry.target.classList.toggle('in', entry.isIntersecting);
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     revealables.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- hero zoom: restart animation when scrolling back to top ---------- */
+  if (!reduce && 'IntersectionObserver' in window) {
+    var heroBgImg = doc.querySelector('.hero-bg img');
+    var heroSection = doc.querySelector('.hero');
+    if (heroBgImg && heroSection) {
+      var heroSeen = false;
+      var heroObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && heroSeen) {
+            heroBgImg.style.animation = 'none';
+            heroBgImg.getBoundingClientRect(); /* force reflow */
+            heroBgImg.style.animation = '';
+          }
+          if (entry.isIntersecting) heroSeen = true;
+        });
+      }, { threshold: 0.1 });
+      heroObserver.observe(heroSection);
+    }
   }
 
   /* ---------- cookie / GDPR banner ---------- */
