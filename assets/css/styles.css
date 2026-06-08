@@ -127,7 +127,7 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
 .nav{display:flex;align-items:center;gap:1.5rem;width:100%;max-width:var(--container);margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
 .brand{display:flex;align-items:center;gap:.7rem;margin-right:auto}
 .brand img{height:56px;width:auto;filter:saturate(1.18) brightness(1.03)}
-.brand .brand-word{font-family:var(--font-display);font-weight:700;font-size:1.28rem;color:var(--ox);letter-spacing:.02em;line-height:1;white-space:nowrap}
+.brand .brand-word{font-family:var(--font-display);font-weight:700;font-size:1.28rem;color:var(--ink);letter-spacing:.02em;line-height:1;white-space:nowrap}
 .nav-links{display:flex;align-items:center;gap:1.6rem}
 .nav-links a{
   font-size:.93rem;letter-spacing:.03em;color:var(--ink);position:relative;padding:.35rem 0;transition:color .2s var(--ease);
