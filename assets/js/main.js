@@ -18,15 +18,29 @@
   /* ---------- site intro splash ---------- */
   var introEl = doc.getElementById('site-intro');
   if (introEl && !root.classList.contains('tk-intro-skip')) {
-    setTimeout(function () {
-      introEl.classList.add('si-out');
-      setTimeout(function () {
-        root.classList.remove('tk-intro-on'); /* start hero zoom 400ms before fade ends */
-      }, 2900);
-      setTimeout(function () {
-        introEl.style.display = 'none';
-      }, 4000);
-    }, 1000);
+    var autoTimer;
+
+    function dismissIntro(fast) {
+      clearTimeout(autoTimer);
+      introEl.removeEventListener('click', onIntroClick);
+      if (fast) {
+        /* manual skip: snap fade in 500ms, zoom starts almost immediately */
+        introEl.style.transition = 'opacity .5s var(--ease)';
+        introEl.classList.add('si-out');
+        setTimeout(function () { root.classList.remove('tk-intro-on'); }, 80);
+        setTimeout(function () { introEl.style.display = 'none'; }, 550);
+      } else {
+        /* auto dismiss: original timing */
+        introEl.classList.add('si-out');
+        setTimeout(function () { root.classList.remove('tk-intro-on'); }, 2900);
+        setTimeout(function () { introEl.style.display = 'none'; }, 4000);
+      }
+    }
+
+    function onIntroClick() { dismissIntro(true); }
+    introEl.addEventListener('click', onIntroClick);
+
+    autoTimer = setTimeout(function () { dismissIntro(false); }, 1000);
   }
 
   /* ---------- mobile menu ---------- */

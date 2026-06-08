@@ -102,7 +102,7 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
   font-family:var(--font-body);font-size:.82rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
   padding:.95em 1.7em;border-radius:999px;border:1.5px solid transparent;
   transition:transform .25s var(--ease),background .25s var(--ease),color .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease);
-  white-space:nowrap;
+  white-space:nowrap;touch-action:manipulation;
 }
 .btn-solid{background:var(--ox);color:var(--beige);box-shadow:0 10px 24px rgba(126,36,27,.28)}
 .btn-solid:hover{background:var(--ox-deep);transform:translateY(-2px);box-shadow:0 14px 30px rgba(126,36,27,.34)}
@@ -139,11 +139,11 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
 
 .nav-actions{display:flex;align-items:center;gap:1rem}
 .lang-toggle{display:inline-flex;align-items:center;border:1px solid var(--line-2);border-radius:999px;overflow:hidden;font-size:.74rem;font-weight:600;letter-spacing:.08em}
-.lang-toggle button{padding:.42rem .7rem;color:var(--muted);transition:background .2s,color .2s}
+.lang-toggle button{padding:.42rem .7rem;color:var(--muted);transition:background .2s,color .2s;touch-action:manipulation}
 .lang-toggle button.active{background:var(--ox);color:var(--beige)}
 .nav-cta{padding:.7em 1.3em;font-size:.76rem}
 
-.nav-toggle{display:none;width:44px;height:44px;border-radius:10px;align-items:center;justify-content:center}
+.nav-toggle{display:none;width:44px;height:44px;border-radius:10px;align-items:center;justify-content:center;touch-action:manipulation}
 .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{
   content:"";display:block;width:22px;height:2px;background:var(--ox);border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
 .nav-toggle span::before{transform:translateY(-7px)}
@@ -151,6 +151,19 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
 .nav-open .nav-toggle span{background:transparent}
 .nav-open .nav-toggle span::before{transform:translateY(0) rotate(45deg)}
 .nav-open .nav-toggle span::after{transform:translateY(-2px) rotate(-45deg)}
+
+/* ---------- skip link (accessibility) ---------- */
+.skip-link{
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+  background:var(--ox);color:var(--beige);
+  font-family:var(--font-body);font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  padding:.7rem 1.4rem;border-radius:0 0 var(--radius-sm) var(--radius-sm);
+  z-index:9999;text-decoration:none;
+}
+.skip-link:focus{
+  position:fixed;left:1rem;top:0;width:auto;height:auto;overflow:visible;
+  outline:2.5px solid var(--beige);outline-offset:3px;
+}
 
 /* ---------- site intro splash ---------- */
 .tk-intro-skip #site-intro{display:none !important}
@@ -161,15 +174,24 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
   padding-top:var(--header-h);
   transition:opacity 4s var(--ease);
   will-change:opacity;
+  cursor:pointer;
 }
 #site-intro.si-out{opacity:0;pointer-events:none}
 .si-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(.4rem,1.2vw,.8rem)}
 .si-welcome{font-family:var(--font-display);font-weight:700;font-size:clamp(1rem,2.2vw,1.6rem);color:var(--ink);letter-spacing:.02em;line-height:1;animation:siIn .5s var(--ease) both}
 .si-inner img{width:clamp(220px,38vw,420px);height:auto;animation:siIn .6s .12s var(--ease) both}
+.si-skip{
+  position:absolute;bottom:clamp(1.2rem,3vw,2rem);
+  font-family:var(--font-body);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);opacity:.7;
+  animation:siIn .6s .5s var(--ease) both;
+  pointer-events:none;
+  user-select:none;
+}
 @keyframes siIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 /* keep hero zoom paused while splash is active - starts fresh on reveal */
 html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
-@media(prefers-reduced-motion:reduce){.si-inner img,.si-name{animation:none !important;opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.si-inner img,.si-name,.si-skip{animation:none !important;opacity:1;transform:none}}
 
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:92svh;display:flex;align-items:flex-end;color:var(--beige);overflow:hidden}
