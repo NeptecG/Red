@@ -331,7 +331,7 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
 /* ---------- footer ---------- */
 .site-footer{background:var(--brown);color:#CFC6B4;padding-block:clamp(3rem,6vw,4.5rem) 1.5rem;position:relative;z-index:1}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:2.5rem}
-.footer-brand .logo-badge{background:#E5E0D4;border-radius:14px;padding:.5rem;display:inline-block;box-shadow:var(--shadow-sm)} /* warm beige sampled from the nav/body seam */
+.footer-brand .logo-badge{background:#E8DDC6;border-radius:14px;padding:.5rem;display:inline-block;box-shadow:var(--shadow-sm)} /* warm beige, saturated to read on the dark footer */
 .footer-brand .logo-badge img{height:140px;width:auto;display:block}
 .footer-brand p{color:#A99F8C;margin-top:1.1rem;font-size:.96rem;max-width:34ch}
 .site-footer h4{font-family:var(--font-body);font-size:.84rem;letter-spacing:.15em;text-transform:uppercase;color:var(--beige);margin-bottom:1.1rem;font-weight:600;opacity:.92}
