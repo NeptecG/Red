@@ -104,10 +104,9 @@
         entries.forEach(function (entry) {
           entry.target.classList.toggle('in', entry.isIntersecting);
         });
-      }, { threshold: 0.05, rootMargin: '0px 0px 100px 0px' });
-      /* rootMargin bottom 100px: extends the "seen" zone 100px below the viewport
-         so the animation begins as the user scrolls near the footer,
-         not only after the element is already on screen */
+      }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
+      /* threshold 0.05: fires as soon as the top edge of the element crosses
+         into the viewport - animation starts exactly on entry, not before */
       repeatEls.forEach(function (el) { ioRepeat.observe(el); });
     }
   }
