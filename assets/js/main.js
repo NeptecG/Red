@@ -20,8 +20,10 @@
   if (introEl && !root.classList.contains('tk-intro-skip')) {
     setTimeout(function () {
       introEl.classList.add('si-out');
-      root.classList.remove('tk-intro-on'); /* start hero zoom */
-      setTimeout(function () { introEl.style.display = 'none'; }, 820);
+      setTimeout(function () {
+        introEl.style.display = 'none';
+        root.classList.remove('tk-intro-on'); /* start hero zoom after splash is fully gone */
+      }, 820);
     }, 1800);
   }
 
