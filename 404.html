@@ -15,23 +15,195 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/main.js" defer></script>
   <style>
-    .err-wrap{
-      min-height:calc(100svh - var(--header-h));
-      display:flex;align-items:center;justify-content:center;
-      text-align:center;padding:clamp(2rem,8vw,5rem) clamp(1.25rem,4vw,2.5rem);
+    /* ================================================================
+       404 - "The Goat Wandered Off"
+       Full-viewport, no scroll. Everything self-contained below.
+    ================================================================ */
+
+    /* lock the page to one screen */
+    html, body { height: 100%; }
+    body { display: flex; flex-direction: column; overflow: hidden; }
+
+    /* ---- stage ---- */
+    .err-stage {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1rem,3vw,2rem) clamp(1.25rem,4vw,2.5rem);
+      overflow: hidden;
+      margin-top: var(--header-h);
     }
-    .err-inner{max-width:560px}
-    .err-num{
-      font-family:var(--font-display);font-size:clamp(6rem,18vw,12rem);
-      font-weight:700;line-height:1;color:var(--ox);opacity:.15;
-      letter-spacing:-.04em;user-select:none;
+
+    /* giant watermark "404" - sits furthest back */
+    .err-watermark {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
     }
-    .err-inner h1{
-      font-family:var(--font-display);font-size:clamp(1.7rem,4vw,2.8rem);
-      color:var(--ox);margin-top:-1.5rem;
+    .err-watermark span {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(14rem, 38vw, 36rem);
+      line-height: 1;
+      color: var(--ox);
+      opacity: 0.045;
+      letter-spacing: -0.06em;
+      animation: wmPulse 7s ease-in-out infinite;
+      will-change: opacity, transform;
     }
-    .err-inner p{color:var(--muted);margin:1rem auto 2rem}
-    .err-actions{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+    @keyframes wmPulse {
+      0%, 100% { opacity: .042; transform: scale(1); }
+      50%       { opacity: .072; transform: scale(1.012); }
+    }
+
+    /* ---- floating diamond sparks ---- */
+    .err-sparks {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .err-sparks i {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: var(--ox);
+      border-radius: 1px;
+      transform: rotate(45deg) scale(0);
+      opacity: 0;
+      animation: sparkDrift var(--d,4s) var(--t,0s) ease-in-out infinite;
+      will-change: transform, opacity;
+    }
+    @keyframes sparkDrift {
+      0%   { opacity: 0;   transform: rotate(45deg) translateY(0)    scale(.4); }
+      18%  { opacity: .6; }
+      75%  { opacity: .25; }
+      100% { opacity: 0;   transform: rotate(45deg) translateY(-68px) scale(1.1); }
+    }
+    /* scatter positions & timings */
+    .err-sparks i:nth-child(1)  { left:16%;  top:65%; --d:3.9s; --t:0s;   }
+    .err-sparks i:nth-child(2)  { left:30%;  top:25%; --d:5.2s; --t:.8s;  }
+    .err-sparks i:nth-child(3)  { left:52%;  top:16%; --d:4.5s; --t:1.3s; }
+    .err-sparks i:nth-child(4)  { left:70%;  top:60%; --d:3.7s; --t:.4s;  }
+    .err-sparks i:nth-child(5)  { left:83%;  top:30%; --d:5.6s; --t:1.9s; }
+    .err-sparks i:nth-child(6)  { left:11%;  top:40%; --d:4.9s; --t:2.3s; }
+    .err-sparks i:nth-child(7)  { left:63%;  top:76%; --d:3.8s; --t:1.0s; }
+    .err-sparks i:nth-child(8)  { left:44%;  top:84%; --d:4.7s; --t:1.6s; }
+    .err-sparks i:nth-child(9)  { left:87%;  top:70%; --d:5.3s; --t:2.7s; }
+    .err-sparks i:nth-child(10) { left:26%;  top:78%; --d:4.2s; --t:.5s;  }
+    .err-sparks i:nth-child(11) { left:76%;  top:18%; --d:3.5s; --t:3.1s; }
+    .err-sparks i:nth-child(12) { left:58%;  top:46%; --d:5.8s; --t:.2s;  }
+
+    /* ---- center composition ---- */
+    .err-core {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 540px;
+      width: 100%;
+      animation: coreIn .85s cubic-bezier(.22,.61,.36,1) both;
+    }
+    @keyframes coreIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* floating, swaying logo */
+    .err-logo {
+      margin-bottom: clamp(.8rem,2vw,1.3rem);
+    }
+    .err-logo img {
+      height: clamp(96px, 16vw, 152px);
+      width: auto;
+      display: inline-block;
+      filter: saturate(1.18) brightness(1.03);
+      animation: goatSway 4.2s cubic-bezier(.45,.05,.55,.95) infinite;
+      transform-origin: 50% 95%;
+      will-change: transform;
+    }
+    @keyframes goatSway {
+      0%,100% { transform: translateY(0)    rotate(-1.8deg); }
+      50%      { transform: translateY(-13px) rotate(1.8deg);  }
+    }
+
+    /* heading */
+    .err-core h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4.2vw, 2.9rem);
+      font-weight: 700;
+      color: var(--ox);
+      line-height: 1.06;
+      margin: .55rem 0 0;
+      letter-spacing: .005em;
+    }
+
+    /* italic myth-flavor quote */
+    .err-myth {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(.98rem, 1.7vw, 1.18rem);
+      font-weight: 400;
+      color: var(--muted);
+      margin: .9rem auto 0;
+      max-width: 42ch;
+      line-height: 1.55;
+    }
+
+    /* divider spacing */
+    .err-div {
+      margin: clamp(1.2rem,2.5vw,1.8rem) auto;
+    }
+
+    /* actions */
+    .err-acts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      justify-content: center;
+    }
+
+    /* ---- slim footer strip (no full footer on 404) ---- */
+    .err-foot {
+      flex: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: .4rem;
+      padding: .75rem clamp(1.25rem,4vw,2.5rem);
+      border-top: 1px solid var(--line);
+      font-size: .8rem;
+      color: var(--muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---- reduced motion ---- */
+    @media (prefers-reduced-motion: reduce) {
+      .err-logo img,
+      .err-watermark span,
+      .err-sparks i,
+      .err-core {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* ---- mobile ---- */
+    @media (max-width: 600px) {
+      /* hide half the sparks to stay light */
+      .err-sparks i:nth-child(n+7) { display: none; }
+      /* tighten footer on phones */
+      .err-foot { justify-content: center; text-align: center; }
+    }
   </style>
 </head>
 <body>
@@ -43,10 +215,10 @@
         <span class="brand-word">Τράγος Κόκκινος</span>
       </a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="menu.html" data-en="Menu">Μενού</a></li>
-        <li><a href="history.html" data-en="History">Ιστορία</a></li>
-        <li><a href="gallery.html" data-en="Gallery">Gallery</a></li>
-        <li><a href="directions.html" data-en="Find Us">Βρείτε μας</a></li>
+        <li><a href="menu.html"        data-en="Menu">Μενού</a></li>
+        <li><a href="history.html"     data-en="History">Ιστορία</a></li>
+        <li><a href="gallery.html"     data-en="Gallery">Gallery</a></li>
+        <li><a href="directions.html"  data-en="Find Us">Βρείτε μας</a></li>
       </ul>
       <div class="nav-actions">
         <a class="btn btn-solid nav-cta" href="reservations.html" data-en="Reserve">Κράτηση</a>
@@ -59,70 +231,52 @@
     </nav>
   </header>
 
-  <main>
-    <div class="err-wrap">
-      <div class="err-inner">
-        <div class="err-num" aria-hidden="true">404</div>
-        <h1 data-en="Page not found">Η σελίδα δεν βρέθηκε</h1>
-        <p data-en="The page you are looking for may have moved or no longer exists. Head back home or explore the menu.">Η σελίδα που ψάχνετε μάλλον μετακινήθηκε ή δεν υπάρχει πλέον. Επιστρέψτε στην αρχική ή εξερευνήστε το μενού.</p>
-        <div class="err-actions">
-          <a class="btn btn-solid" href="index.html" data-en="Back home">Αρχική σελίδα</a>
-          <a class="btn btn-ghost" href="menu.html" data-en="View menu">Δείτε το μενού</a>
-        </div>
+  <main class="err-stage">
+
+    <!-- giant "404" behind everything -->
+    <div class="err-watermark" aria-hidden="true"><span>404</span></div>
+
+    <!-- floating ember sparks -->
+    <div class="err-sparks" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+
+    <!-- the composition -->
+    <div class="err-core">
+
+      <!-- the dancing goat, center-stage -->
+      <div class="err-logo">
+        <img src="assets/logo.webp" alt="Τράγος Κόκκινος" width="981" height="1154">
       </div>
+
+      <span class="eyebrow flank" data-en="Error 404">Σφάλμα 404</span>
+
+      <h1 data-en="The page wandered off">Η σελίδα περιπλανήθηκε</h1>
+
+      <p class="err-myth" data-en="&laquo;This Goat danced so much, it forgot where it was going.&raquo;">«Αυτός ο Τράγος χόρεψε τόσο πολύ, που ξέχασε πού πήγαινε.»</p>
+
+      <div class="divider err-div" aria-hidden="true"><span></span></div>
+
+      <div class="err-acts">
+        <a class="btn btn-solid" href="index.html" data-en="Back home">Αρχική σελίδα</a>
+        <a class="btn btn-ghost" href="menu.html"  data-en="View the menu">Δείτε το μενού</a>
+      </div>
+
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand" data-reveal-repeat>
-          <span class="logo-badge"><img src="assets/logo.webp" alt="Τράγος Κόκκινος" width="981" height="1154"></span>
-          <p data-en="Traditional Greek cooking with meraki and soul, in the heart of Preveza.">Παραδοσιακή ελληνική κουζίνα με μεράκι και ψυχή, στην καρδιά της Πρέβεζας.</p>
-        </div>
-        <div class="f-col">
-          <h4 data-en="Explore">Εξερευνήστε</h4>
-          <a href="menu.html" data-en="Menu">Μενού</a>
-          <a href="history.html" data-en="History">Ιστορία</a>
-          <a href="gallery.html" data-en="Gallery">Gallery</a>
-          <a href="directions.html" data-en="Find Us">Βρείτε μας</a>
-          <a href="reservations.html" data-en="Reservations">Κρατήσεις</a>
-        </div>
-        <div class="f-col">
-          <h4 data-en="Hours">Ώρες</h4>
-          <ul>
-            <li data-en="Daily">Καθημερινά</li>
-            <li>13:00 - 24:00</li>
-          </ul>
-          <h4 style="margin-top:1.5rem" data-en="Address">Διεύθυνση</h4>
-          <a href="directions.html" data-en="1 Vyronos St, Preveza, 48100">Βύρωνος 1, Πρέβεζα, 48100</a>
-        </div>
-        <div class="f-col">
-          <h4 data-en="Contact">Επικοινωνία</h4>
-          <a href="tel:+302682000000">+30 26820 00000</a>
-          <a href="mailto:hello@tragoskokkinos.gr">hello@tragoskokkinos.gr</a>
-          <div class="social">
-            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
-              <svg viewBox="0.5 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span id="year">2026</span> Τράγος Κόκκινος · <span data-en="Preveza, Greece">Πρέβεζα, Ελλάδα</span></span>
-        <span data-en="Made by Neptec">Made by Neptec</span>
-      </div>
-    </div>
-  </footer>
-
+  <!-- slim footer strip - no full footer on the 404 -->
+  <div class="err-foot">
+    <span>© <span id="year">2026</span> Τράγος Κόκκινος &middot; <span data-en="Preveza, Greece">Πρέβεζα, Ελλάδα</span></span>
+    <span data-en="Made by Neptec">Made by Neptec</span>
+  </div>
 
   <!-- GDPR cookie notice -->
   <div class="cookie-bar" id="cookie-bar" role="region" aria-label="Cookie notice / Ειδοποίηση cookies">
     <p data-en="This site uses Google Fonts served from Google's servers, which may process your IP address (EU GDPR). Continuing means you accept this.">Ο ιστότοπος χρησιμοποιεί Google Fonts μέσω διακομιστών της Google, οι οποίοι ενδέχεται να επεξεργαστούν τη διεύθυνση IP σας (GDPR ΕΕ). Η συνέχιση περιήγησης σημαίνει αποδοχή.</p>
     <button class="cookie-bar-btn" id="cookie-ok" type="button" data-en="Got it">Εντάξει</button>
   </div>
+
 </body>
 </html>
