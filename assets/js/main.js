@@ -21,10 +21,10 @@
     setTimeout(function () {
       introEl.classList.add('si-out');
       setTimeout(function () {
+        root.classList.remove('tk-intro-on'); /* start hero zoom 400ms before fade ends */
+      }, 3600);
+      setTimeout(function () {
         introEl.style.display = 'none';
-        setTimeout(function () {
-          root.classList.remove('tk-intro-on'); /* start hero zoom 300ms after fade completes */
-        }, 300);
       }, 4000);
     }, 1000);
   }
