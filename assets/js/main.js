@@ -111,24 +111,23 @@
     }
   }
 
-  /* ---------- hero zoom: restart animation when scrolling back to top ---------- */
+  /* ---------- hero zoom: restart animation when any .hero re-enters viewport ---------- */
   if (!reduce && 'IntersectionObserver' in window) {
-    var heroBgImg = doc.querySelector('.hero-bg img');
-    var heroSection = doc.querySelector('.hero');
-    if (heroBgImg && heroSection) {
-      var heroSeen = false;
-      var heroObserver = new IntersectionObserver(function (entries) {
+    doc.querySelectorAll('.hero').forEach(function (section) {
+      var img = section.querySelector('.hero-bg img');
+      if (!img) return;
+      var seen = false;
+      new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting && heroSeen) {
-            heroBgImg.style.animation = 'none';
-            heroBgImg.getBoundingClientRect(); /* force reflow */
-            heroBgImg.style.animation = '';
+          if (entry.isIntersecting && seen) {
+            img.style.animation = 'none';
+            img.getBoundingClientRect();
+            img.style.animation = '';
           }
-          if (entry.isIntersecting) heroSeen = true;
+          if (entry.isIntersecting) seen = true;
         });
-      }, { threshold: 0.1 });
-      heroObserver.observe(heroSection);
-    }
+      }, { threshold: 0.1 }).observe(section);
+    });
   }
 
   /* ---------- cookie / GDPR banner ---------- */
