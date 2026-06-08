@@ -23,7 +23,7 @@
       setTimeout(function () {
         introEl.style.display = 'none';
         root.classList.remove('tk-intro-on'); /* start hero zoom after splash is fully gone */
-      }, 2500);
+      }, 4000);
     }, 1000);
   }
 
