@@ -24,7 +24,7 @@
         introEl.style.display = 'none';
         root.classList.remove('tk-intro-on'); /* start hero zoom after splash is fully gone */
       }, 820);
-    }, 1800);
+    }, 2000);
   }
 
   /* ---------- mobile menu ---------- */
