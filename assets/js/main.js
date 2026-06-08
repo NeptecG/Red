@@ -188,6 +188,21 @@
   var yEl = doc.getElementById('year');
   if (yEl) yEl.textContent = new Date().getFullYear();
 
+  /* ---------- phone input: digits, +, spaces only (no letters) ---------- */
+  var phoneInput = doc.getElementById('r-phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function () {
+      var pos = this.selectionStart;
+      var cleaned = this.value
+        .replace(/[^\d+\s]/g, '')   /* strip anything that is not digit, +, or space */
+        .replace(/(?!^)\+/g, '');   /* + only allowed at position 0 */
+      if (cleaned !== this.value) {
+        this.value = cleaned;
+        try { this.setSelectionRange(pos - 1, pos - 1); } catch (e) {}
+      }
+    });
+  }
+
   /* ---------- gallery lightbox carousel ---------- */
   var gFigures = doc.querySelectorAll('.masonry .g-item');
   if (gFigures.length) {
