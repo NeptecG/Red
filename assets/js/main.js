@@ -15,6 +15,17 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* ---------- site intro splash ---------- */
+  var introEl = doc.getElementById('site-intro');
+  if (introEl && !root.classList.contains('tk-intro-skip')) {
+    try { sessionStorage.setItem('tk-intro', '1'); } catch(e) {}
+    setTimeout(function () {
+      introEl.classList.add('si-out');
+      root.classList.remove('tk-intro-on'); /* start hero zoom */
+      setTimeout(function () { introEl.style.display = 'none'; }, 820);
+    }, 1800);
+  }
+
   /* ---------- mobile menu ---------- */
   var navToggle = doc.querySelector('.nav-toggle');
   function setMenu(open) {

@@ -152,6 +152,30 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
 .nav-open .nav-toggle span::before{transform:translateY(0) rotate(45deg)}
 .nav-open .nav-toggle span::after{transform:translateY(-2px) rotate(-45deg)}
 
+/* ---------- site intro splash ---------- */
+.tk-intro-skip #site-intro{display:none !important}
+#site-intro{
+  position:fixed;inset:0;z-index:50;
+  background:var(--beige);
+  display:flex;align-items:center;justify-content:center;
+  padding-top:var(--header-h);
+  transition:opacity .8s var(--ease);
+  will-change:opacity;
+}
+#site-intro.si-out{opacity:0;pointer-events:none}
+.si-inner{display:flex;flex-direction:column;align-items:center;gap:clamp(.9rem,2vw,1.4rem);text-align:center}
+.si-inner img{height:clamp(88px,14vw,148px);width:auto;animation:siIn .6s var(--ease) both}
+.si-name{
+  font-family:var(--font-display);font-style:italic;
+  font-size:clamp(1.5rem,3.2vw,2.4rem);
+  color:var(--ox);letter-spacing:.04em;line-height:1;
+  animation:siIn .65s .13s var(--ease) both;
+}
+@keyframes siIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+/* keep hero zoom paused while splash is active - starts fresh on reveal */
+html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.si-inner img,.si-name{animation:none !important;opacity:1;transform:none}}
+
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:92svh;display:flex;align-items:flex-end;color:var(--beige);overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0}
