@@ -181,14 +181,26 @@
       mCols = n;
       masonryEl.innerHTML = '';
       masonryEl.classList.add('m-flex');
-      var cols = [];
+      var cols = [], heights = [];
       for (var ci = 0; ci < n; ci++) {
         var c = doc.createElement('div');
         c.className = 'm-col';
         masonryEl.appendChild(c);
         cols.push(c);
+        heights.push(0);
       }
-      mItems.forEach(function (item, i) { cols[i % n].appendChild(item); });
+      /* in order, drop each photo into the currently shortest column:
+         keeps reading flow but balances column heights (aspect from attrs) */
+      mItems.forEach(function (item) {
+        var img = item.querySelector('img');
+        var w = img ? +img.getAttribute('width') : 0;
+        var h = img ? +img.getAttribute('height') : 0;
+        var aspect = (w && h) ? h / w : 1;
+        var k = 0;
+        for (var j = 1; j < n; j++) { if (heights[j] < heights[k] - 0.001) k = j; }
+        cols[k].appendChild(item);
+        heights[k] += aspect + 0.04; /* + approximate gap */
+      });
     };
     layoutMasonry();
     window.addEventListener('resize', layoutMasonry);
