@@ -351,6 +351,8 @@ html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
 
 /* ---------- forms / reservations ---------- */
 .reserve-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.5rem,4vw,3rem);align-items:start}
+/* let 1fr tracks shrink below child min-content (prevents 8px overflow at ~320px) */
+.dir-grid>*,.reserve-grid>*{min-width:0}
 .form-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(1.6rem,3.5vw,2.75rem);box-shadow:var(--shadow-sm)}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.2rem}
 .field{display:flex;flex-direction:column;gap:.4rem}
