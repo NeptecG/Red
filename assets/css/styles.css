@@ -389,9 +389,6 @@ html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
 .site-footer .f-col a,.site-footer .f-col li{display:block;color:#CFC6B4;padding:.34rem 0;font-size:1.02rem;transition:color .2s}
 .site-footer .f-col a:hover{color:var(--beige)}
 .social{display:flex;gap:.8rem;margin-top:.4rem}
-/* PRE-LIVE: social profiles not created yet. Delete the next rule and set real
-   href values on the IG/FB links (footers) to show the icons again. */
-.social{display:none}
 .site-footer .social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(239,233,220,.22);display:flex;align-items:center;justify-content:center;color:#CFC6B4;padding:0;font-size:inherit}
 .site-footer .social a:hover{background:var(--beige);color:var(--brown);border-color:var(--beige)}
 .social svg{width:18px;height:18px;display:block}
