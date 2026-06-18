@@ -125,8 +125,8 @@ p.one-liner{white-space:nowrap;max-width:none;text-wrap:nowrap}
 }
 .site-header.is-scrolled{background:rgba(239,233,220,.96);border-bottom-color:var(--line);box-shadow:0 6px 22px rgba(34,30,24,.07)}
 .nav{display:flex;align-items:center;gap:1.5rem;width:100%;max-width:var(--container);margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
-.brand{display:flex;align-items:center;gap:.7rem;margin-right:auto}
-.brand img{height:56px;width:auto;filter:saturate(1.18) brightness(1.03)}
+.brand{display:flex;align-items:center;gap:.7rem;margin-right:auto;flex-shrink:0}
+.brand img{height:56px;width:auto;flex-shrink:0;filter:saturate(1.18) brightness(1.03)}
 .brand .brand-word{font-family:var(--font-display);font-weight:700;font-size:1.28rem;color:var(--ink);letter-spacing:.02em;line-height:1;white-space:nowrap}
 .nav-links{display:flex;align-items:center;gap:1.6rem}
 .nav-links a{
