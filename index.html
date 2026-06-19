@@ -55,7 +55,17 @@
       "latitude": 38.957678,
       "longitude": 20.753682
     },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "13:00",
+      "closes": "24:00"
+    },
     "openingHours": "Mo-Su 13:00-24:00",
+    "areaServed": { "@type": "City", "name": "Preveza" },
+    "knowsLanguage": ["el","en"],
+    "paymentAccepted": "Cash, Credit Card",
+    "sameAs": ["https://instagram.com", "https://facebook.com"],
     "servesCuisine": ["Greek", "Mediterranean", "Seafood"],
     "priceRange": "€€",
     "hasMenu": "https://tragoskokkinos.gr/menu.html",
@@ -209,7 +219,64 @@
         </div>
       </div>
     </section>
+
+    <!-- FAQ (GEO: machine-readable answers for AI assistants & search) -->
+    <section class="section faq" style="padding-top:0">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow flank" data-en="Good to know">Καλό να ξέρετε</span>
+          <h2 class="section-title" data-en="Frequently asked questions">Συχνές ερωτήσεις</h2>
+        </div>
+        <div class="faq-list" data-reveal>
+          <details class="faq-item">
+            <summary data-en="Do you take reservations?">Δέχεστε κρατήσεις;</summary>
+            <p data-en="Yes. You can request a table through the online form on our reservations page or call us, and we confirm every booking by phone. For groups of 8 or more, calling is best.">Ναι. Μπορείτε να ζητήσετε τραπέζι μέσω της online φόρμας στη σελίδα κρατήσεων ή τηλεφωνικά, και επιβεβαιώνουμε κάθε κράτηση τηλεφωνικά. Για παρέες 8 ατόμων και άνω, προτιμήστε το τηλέφωνο.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-en="What kind of cuisine do you serve?">Τι κουζίνα σερβίρετε;</summary>
+            <p data-en="Traditional Greek and Epirus cuisine with a modern, creative touch: fresh fish and seafood from the Amvrakikos Gulf, mountain meats, local greens and recipes passed down through generations.">Παραδοσιακή ελληνική και ηπειρώτικη κουζίνα με σύγχρονη, δημιουργική ματιά: φρέσκο ψάρι και θαλασσινά από τον Αμβρακικό, κρέατα του βουνού, ντόπια χόρτα και συνταγές που πέρασαν από γενιά σε γενιά.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-en="Where are you located?">Πού βρίσκεστε;</summary>
+            <p data-en="In the heart of Preveza, at 1 Vyronos Street, 48100, on the waterfront where the Amvrakikos Gulf meets the Ionian Sea.">Στην καρδιά της Πρέβεζας, στη Βύρωνος 1, 48100, στην παραλία όπου ο Αμβρακικός συναντά το Ιόνιο.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-en="What are your opening hours?">Ποιες ώρες είστε ανοιχτά;</summary>
+            <p data-en="We are open every day, from 13:00 to 24:00, for both lunch and dinner.">Είμαστε ανοιχτά κάθε μέρα, από τις 13:00 έως τις 24:00, για μεσημέρι και βράδυ.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-en="Is there parking nearby?">Υπάρχει στάθμευση κοντά;</summary>
+            <p data-en="Yes. There is parking at 21is Oktovriou 11, a short walk from the restaurant.">Ναι. Υπάρχει πάρκινγκ στην 21ης Οκτωβρίου 11, σε μικρή απόσταση με τα πόδια από το εστιατόριο.</p>
+          </details>
+          <details class="faq-item">
+            <summary data-en="Do you have vegetarian options?">Έχετε επιλογές για χορτοφάγους;</summary>
+            <p data-en="Yes. Our menu includes fresh salads, seasonal vegetable dishes and traditional Greek vegetarian plates alongside our meat and seafood.">Ναι. Το μενού μας περιλαμβάνει φρέσκες σαλάτες, πιάτα με λαχανικά εποχής και παραδοσιακά ελληνικά χορτοφαγικά πιάτα, δίπλα στο κρέας και τα θαλασσινά.</p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Δέχεστε κρατήσεις;",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ναι. Μπορείτε να ζητήσετε τραπέζι μέσω της online φόρμας στη σελίδα κρατήσεων ή τηλεφωνικά, και επιβεβαιώνουμε κάθε κράτηση τηλεφωνικά. Για παρέες 8 ατόμων και άνω, προτιμήστε το τηλέφωνο." } },
+      { "@type": "Question", "name": "Τι κουζίνα σερβίρετε;",
+        "acceptedAnswer": { "@type": "Answer", "text": "Παραδοσιακή ελληνική και ηπειρώτικη κουζίνα με σύγχρονη, δημιουργική ματιά: φρέσκο ψάρι και θαλασσινά από τον Αμβρακικό, κρέατα του βουνού, ντόπια χόρτα και συνταγές που πέρασαν από γενιά σε γενιά." } },
+      { "@type": "Question", "name": "Πού βρίσκεστε;",
+        "acceptedAnswer": { "@type": "Answer", "text": "Στην καρδιά της Πρέβεζας, στη Βύρωνος 1, 48100, στην παραλία όπου ο Αμβρακικός συναντά το Ιόνιο." } },
+      { "@type": "Question", "name": "Ποιες ώρες είστε ανοιχτά;",
+        "acceptedAnswer": { "@type": "Answer", "text": "Είμαστε ανοιχτά κάθε μέρα, από τις 13:00 έως τις 24:00, για μεσημέρι και βράδυ." } },
+      { "@type": "Question", "name": "Υπάρχει στάθμευση κοντά;",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ναι. Υπάρχει πάρκινγκ στην 21ης Οκτωβρίου 11, σε μικρή απόσταση με τα πόδια από το εστιατόριο." } },
+      { "@type": "Question", "name": "Έχετε επιλογές για χορτοφάγους;",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ναι. Το μενού μας περιλαμβάνει φρέσκες σαλάτες, πιάτα με λαχανικά εποχής και παραδοσιακά ελληνικά χορτοφαγικά πιάτα, δίπλα στο κρέας και τα θαλασσινά." } }
+    ]
+  }
+  </script>
 
   <footer class="site-footer">
     <div class="container">

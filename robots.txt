@@ -1,4 +1,33 @@
+# Trágos Kokkinos — all crawlers welcome, including AI assistants
 User-agent: *
+Allow: /
+
+# AI / answer-engine crawlers (explicitly allowed for GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://tragoskokkinos.gr/sitemap.xml

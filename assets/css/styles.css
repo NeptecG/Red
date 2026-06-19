@@ -242,6 +242,18 @@ html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
 .band .band-info .bi-value{font-family:var(--font-display);font-size:1.3rem}
 .band a.bi-value:hover{text-decoration:underline}
 
+/* ---------- FAQ ---------- */
+.faq-list{max-width:780px;margin-inline:auto}
+.faq-item{border-bottom:1px solid var(--line);padding:.2rem 0}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.15rem .2rem;font-family:var(--font-display);font-size:clamp(1.15rem,2.2vw,1.4rem);font-weight:600;color:var(--ink);transition:color .2s var(--ease)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"";flex:none;width:11px;height:11px;border-right:2px solid var(--ox);border-bottom:2px solid var(--ox);transform:rotate(45deg);transition:transform .3s var(--ease);margin-right:.3rem}
+.faq-item[open] summary::after{transform:rotate(-135deg)}
+.faq-item summary:hover{color:var(--ox)}
+.faq-item p{max-width:none;color:var(--muted);line-height:1.7;padding:0 .2rem 1.3rem;margin:0;animation:faqIn .35s var(--ease)}
+@keyframes faqIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.faq-item summary::after,.faq-item p{transition:none;animation:none}}
+
 /* ---------- menu page ---------- */
 .menu-tabs{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:clamp(2rem,4vw,3rem);position:sticky;top:calc(var(--header-h) + 8px);z-index:40}
 .menu-tabs a{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding:.55em 1.1em;border-radius:999px;border:1px solid var(--line-2);background:rgba(251,248,241,.85);backdrop-filter:blur(6px);transition:background .2s,color .2s,border-color .2s}
