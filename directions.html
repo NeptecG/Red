@@ -37,7 +37,9 @@
     .page-hero h1         { font-size: clamp(1.75rem, 4vw, 2.6rem); }
     .page-hero p          { font-size: .96rem; font-weight: 500; }
     .info-row .it-label   { font-family: var(--font-body); font-weight: 600; }
-    .info-row .it-value   { font-size: 1.16rem; font-weight: 600; }
+    .info-row .it-value     { font-size: 1.16rem; font-weight: 500; } /* Greek words */
+    .info-row .it-value .n  { font-weight: 700; }                     /* numbers stay bold */
+    .info-row a.it-value    { font-weight: 700; }                     /* phone is all numbers */
     /* Cormorant's Latin renders thinner than its Greek; bump weight in English
        only so the Find Us text matches the heavier Greek look */
     html[lang="en"] .page-hero p        { font-weight: 600; }
@@ -135,14 +137,14 @@
             <span class="ic"><img src="assets/img/ic-address.webp" alt="" width="160" height="160" loading="lazy"></span>
             <div>
               <div class="it-label" data-en="Address">Διεύθυνση</div>
-              <div class="it-value" data-en="1 Vyronos St, Preveza, 48100">Βύρωνος 1, Πρέβεζα, 48100</div>
+              <div class="it-value" data-en-html='<span class="n">1</span> Vyronos St, Preveza, <span class="n">48100</span>'>Βύρωνος <span class="n">1</span>, Πρέβεζα, <span class="n">48100</span></div>
             </div>
           </div>
           <div class="info-row">
             <span class="ic"><img src="assets/img/ic-hours.webp" alt="" width="160" height="160" loading="lazy"></span>
             <div>
               <div class="it-label" data-en="Opening hours">Ώρες λειτουργίας</div>
-              <div class="it-value" data-en="Daily · 13:00 - 24:00">Καθημερινά: 13:00 - 24:00</div>
+              <div class="it-value" data-en-html='Daily · <span class="n">13:00 - 24:00</span>'>Καθημερινά: <span class="n">13:00 - 24:00</span></div>
             </div>
           </div>
           <div class="info-row">
@@ -156,7 +158,7 @@
             <span class="ic"><img src="assets/img/ic-parking.webp" alt="" width="160" height="160" loading="lazy"></span>
             <div>
               <div class="it-label" data-en="Parking">Στάθμευση</div>
-              <div class="it-value" data-en="21is Oktovriou 11 Parking">21ης Οκτωβρίου 11, Πάρκινγκ</div>
+              <div class="it-value" data-en-html='<span class="n">21is</span> Oktovriou <span class="n">11</span> Parking'><span class="n">21</span>ης Οκτωβρίου <span class="n">11</span>, Πάρκινγκ</div>
             </div>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem">
