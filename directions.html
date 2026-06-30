@@ -38,6 +38,10 @@
     .page-hero p          { font-size: .96rem; font-weight: 500; }
     .info-row .it-label   { font-family: var(--font-body); font-weight: 600; }
     .info-row .it-value   { font-size: 1.16rem; }
+    /* Cormorant's Latin renders thinner than its Greek; bump weight in English
+       only so the Find Us text matches the heavier Greek look */
+    html[lang="en"] .page-hero p        { font-weight: 600; }
+    html[lang="en"] .info-row .it-value { font-weight: 700; }
   </style>
   <script type="application/ld+json">
   {
