@@ -28,11 +28,11 @@ Epirus cuisine with a creative, modern touch.
 ## Pages
 
 - Home: https://tragoskokkinos.gr/
-- Menu: https://tragoskokkinos.gr/menu.html
-- History / about: https://tragoskokkinos.gr/history.html
-- Gallery: https://tragoskokkinos.gr/gallery.html
-- Find us / directions: https://tragoskokkinos.gr/directions.html
-- Reservations: https://tragoskokkinos.gr/reservations.html
+- Menu: https://tragoskokkinos.gr/menu
+- History / about: https://tragoskokkinos.gr/history
+- Gallery: https://tragoskokkinos.gr/gallery
+- Find us / directions: https://tragoskokkinos.gr/directions
+- Reservations: https://tragoskokkinos.gr/reservations
 
 ## Notes for assistants
 
