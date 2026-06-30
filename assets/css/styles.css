@@ -390,8 +390,8 @@ html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
 .site-footer h4{font-family:var(--font-body);font-size:.84rem;letter-spacing:.15em;text-transform:uppercase;color:var(--beige);margin-bottom:1.1rem;font-weight:600;opacity:.92}
 .site-footer .f-col a,.site-footer .f-col li{display:block;color:#CFC6B4;padding:.34rem 0;font-size:1.02rem;transition:color .2s}
 .site-footer .f-col a.contact-link{display:inline-flex;align-items:center;gap:.55rem}
-.site-footer .f-col a.contact-link svg{width:15px;height:15px;flex:none;opacity:.85}
-.site-footer .f-col a:hover{color:var(--beige)}
+.site-footer .f-col a.contact-link svg{width:17px;height:17px;flex:none;opacity:.85}
+.site-footer .f-col a:hover{color:#fff}
 .social{display:flex;gap:.8rem;margin-top:.4rem}
 .site-footer .social a{width:40px;height:40px;border-radius:50%;border:1px solid var(--ox);background:var(--ox);display:flex;align-items:center;justify-content:center;color:var(--beige);padding:0;font-size:inherit;transition:background .2s,color .2s,border-color .2s}
 .site-footer .social a:hover{background:var(--beige);color:var(--ox);border-color:var(--beige)}
