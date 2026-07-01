@@ -32,7 +32,8 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <style>
     /* match Find Us: Greek words 500, numbers bold 700, English 700 */
-    .info-row .it-value                 { font-weight: 500; }
+    .info-row .it-label                 { font-family: var(--font-body); font-weight: 600; }
+    .info-row .it-value                 { font-size: 1.16rem; font-weight: 500; }
     .info-row .it-value .n              { font-weight: 700; }
     html[lang="en"] .info-row .it-value { font-weight: 700; }
   </style>
@@ -93,6 +94,7 @@
         <li><a href="/menu" data-en="Menu">Μενού</a></li>
         <li><a href="/history" data-en="History">Ιστορία</a></li>
         <li><a href="/gallery" data-en="Gallery">Gallery</a></li>
+        <li><a href="/directions" data-en="Find Us">Βρείτε μας</a></li>
       </ul>
       <div class="nav-actions">
         <a class="btn btn-solid nav-cta" href="/reservations" data-en="Reserve">Κράτηση</a>
@@ -191,7 +193,7 @@
               <span class="ic"><img src="assets/img/ic-hours.webp" alt="" width="160" height="160" loading="lazy"></span>
               <div>
                 <div class="it-label" data-en="Hours">Ώρες</div>
-                <div class="it-value" data-en-html='Daily · <span class="n">13:00 - 24:00</span>'>Καθημερινά · <span class="n">13:00 - 24:00</span></div>
+                <div class="it-value" data-en-html='Daily · <span class="n">13:00 - 24:00</span>'>Καθημερινά: <span class="n">13:00 - 24:00</span></div>
               </div>
             </div>
             <div class="info-row" style="padding-bottom:0">
