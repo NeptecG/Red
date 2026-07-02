@@ -238,8 +238,11 @@ html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
 .band .container{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem;padding-block:clamp(2.25rem,4vw,3.25rem)}
 .band h2{color:var(--beige);font-size:clamp(1.7rem,3vw,2.5rem)}
 .band .band-info{display:flex;flex-wrap:wrap;gap:2.2rem}
-.band .band-info .bi-label{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.3rem}
-.band .band-info .bi-value{font-family:var(--font-display);font-size:1.3rem}
+.band .band-info .bi-label{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.3rem;font-weight:600}
+.band .band-info .bi-value{font-family:var(--font-display);font-size:1.3rem;font-weight:500}
+.band .band-info .bi-value .n{font-weight:700}
+.band .band-info a.bi-value{font-weight:700} /* phone: all numbers */
+html[lang="en"] .band .band-info .bi-value{font-weight:700}
 .band a.bi-value:hover{text-decoration:underline}
 
 /* ---------- menu page ---------- */
