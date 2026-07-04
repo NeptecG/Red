@@ -231,7 +231,7 @@ html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
 .dish-card .card-body{padding:1.5rem 1.5rem 1.7rem}
 .dish-card h3{color:var(--ox);margin-bottom:.4rem}
 .dish-card .card-body p{font-size:1.04rem;color:var(--muted)}
-.dish-card .price{display:inline-block;margin-top:.9rem;font-family:var(--font-display);font-weight:700;font-size:1.25rem;color:var(--ink)}
+.dish-card .price{display:inline-block;margin-top:.9rem;font-family:var(--font-display);font-weight:700;font-size:1.25rem;color:var(--ox)} /* red like the dish title + /menu prices */
 
 /* ---------- band (hours / cta) ---------- */
 .band{background:var(--ox);color:var(--beige);position:relative;overflow:hidden}
