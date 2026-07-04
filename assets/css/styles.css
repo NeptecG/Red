@@ -396,10 +396,18 @@ html[lang="en"] .band .band-info .bi-value{font-weight:700}
 .site-footer .f-col a,.site-footer .f-col li{display:block;color:#CFC6B4;padding:.34rem 0;font-size:1.02rem;transition:color .2s}
 .site-footer .f-col a.contact-link{display:inline-flex;align-items:center;gap:.55rem}
 .site-footer .f-col a.contact-link svg{width:16px;height:16px;flex:none;opacity:.85}
-.site-footer .f-col a:hover{color:var(--beige)}
+/* hover colors only on devices with a real pointer - stops "stuck" tap highlights on touch.
+   On touch, the same effect plays via .tap-active (added on tap, auto-removed). */
+@media (hover:hover){
+  .site-footer .f-col a:hover{color:var(--beige)}
+}
+.site-footer .f-col a.tap-active{color:var(--beige)}
 .social{display:flex;gap:.8rem;margin-top:.4rem}
 .site-footer .social a{width:40px;height:40px;border-radius:50%;border:1px solid var(--ox);background:var(--ox);display:flex;align-items:center;justify-content:center;color:var(--beige);padding:0;font-size:inherit;transition:background .2s,color .2s,border-color .2s}
-.site-footer .social a:hover{background:var(--beige);color:var(--ox);border-color:var(--beige)}
+@media (hover:hover){
+  .site-footer .social a:hover{background:var(--beige);color:var(--ox);border-color:var(--beige)}
+}
+.site-footer .social a.tap-active{background:var(--beige);color:var(--ox);border-color:var(--beige)}
 .social svg{width:18px;height:18px;display:block}
 .footer-bottom{border-top:1px solid rgba(239,233,220,.14);margin-top:2.5rem;padding-top:1.4rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;font-size:.92rem;color:#9A9080}
 

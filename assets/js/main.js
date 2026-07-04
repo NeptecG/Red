@@ -263,6 +263,32 @@
   var yEl = doc.getElementById('year');
   if (yEl) yEl.textContent = new Date().getFullYear();
 
+  /* ---------- footer mobile UX: Messenger deep link + tap animation ---------- */
+  /* Mobile: open the Messenger app directly (skips the slow m.me redirect chain);
+     falls back to the web link after 1.6s if the app is missing. */
+  var msgr = doc.querySelector('a[href^="https://m.me/"]');
+  if (msgr && /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    msgr.addEventListener('click', function (e) {
+      e.preventDefault();
+      var id = msgr.href.split('m.me/')[1].replace(/\/+$/, '');
+      window.location.href = 'fb-messenger://user-thread/' + id;
+      setTimeout(function () {
+        if (!doc.hidden) window.open(msgr.href, '_blank', 'noopener');
+      }, 1600);
+    });
+  }
+
+  /* Tap animation: play the hover effect on tap, then auto-clear it (no stuck highlight). */
+  doc.querySelectorAll('.site-footer a').forEach(function (el) {
+    el.addEventListener('click', function () {
+      el.classList.add('tap-active');
+      setTimeout(function () {
+        el.classList.remove('tap-active');
+        el.blur();
+      }, 900);
+    });
+  });
+
   /* ---------- phone input: digits, +, spaces only (no letters) ---------- */
   var phoneInput = doc.getElementById('r-phone');
   if (phoneInput) {
