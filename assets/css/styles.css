@@ -394,7 +394,7 @@ html[lang="en"] .band .band-info .bi-value{font-weight:700}
 .footer-brand p{color:#A99F8C;margin-top:1.1rem;font-size:.96rem;max-width:34ch}
 .site-footer h4{font-family:var(--font-body);font-size:.84rem;letter-spacing:.15em;text-transform:uppercase;color:var(--beige);margin-bottom:1.1rem;font-weight:600;opacity:.92}
 .site-footer .f-col a,.site-footer .f-col li{display:block;color:#CFC6B4;padding:.34rem 0;font-size:1.02rem;transition:color .2s}
-.site-footer .f-col a.contact-link{display:inline-flex;align-items:center;gap:.55rem}
+.site-footer .f-col a.contact-link{display:flex;align-items:center;gap:.55rem} /* flex (not inline-flex): each contact on its own line at every width */
 .site-footer .f-col a.contact-link svg{width:16px;height:16px;flex:none;opacity:.85}
 /* hover colors only on devices with a real pointer - stops "stuck" tap highlights on touch.
    On touch, the same effect plays via .tap-active (added on tap, auto-removed). */
