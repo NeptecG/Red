@@ -475,25 +475,29 @@ html[lang="en"] .band .band-info .bi-value{font-weight:700}
   .hero-bg img{animation:none}
 }
 
-/* ---------- cookie / GDPR banner ---------- */
+/* ---------- cookie / GDPR banner (floating card, like the gift project) ---------- */
 .cookie-bar{
-  position:fixed;bottom:0;left:0;right:0;z-index:150;
-  background:var(--brown);color:#CFC6B4;
-  display:flex;align-items:center;gap:1.2rem;
-  padding:.85rem clamp(1.25rem,4vw,2.5rem);
-  border-top:1px solid rgba(239,233,220,.15);
-  transform:translateY(100%);transition:transform .4s var(--ease);
+  position:fixed;bottom:1.25rem;left:1.25rem;z-index:150;
+  max-width:26rem;
+  background:var(--paper);color:var(--ink);
+  border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:0 20px 50px rgba(34,30,24,.28);
+  padding:1.4rem 1.5rem;
+  opacity:0;transform:translateY(20px);pointer-events:none;
+  transition:opacity .4s var(--ease),transform .4s var(--ease);
 }
-.cookie-bar.visible{transform:translateY(0)}
-.cookie-bar p{margin:0;max-width:none;font-size:.82rem;opacity:.85;flex:1}
+.cookie-bar.visible{opacity:1;transform:none;pointer-events:auto}
+.cookie-bar h3{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--ink);margin:0 0 .5rem}
+.cookie-bar p{margin:0 0 1rem;max-width:none;font-size:.9rem;line-height:1.55;color:var(--muted)}
 .cookie-bar-btn{
-  flex:none;background:var(--ox);color:var(--beige);border:none;border-radius:999px;
-  padding:.48em 1.3em;font-family:var(--font-body);font-size:.76rem;font-weight:600;
+  width:100%;background:var(--ox);color:var(--beige);border:none;border-radius:999px;
+  padding:.65em 1.3em;font-family:var(--font-body);font-size:.8rem;font-weight:600;
   letter-spacing:.12em;text-transform:uppercase;cursor:pointer;white-space:nowrap;
-  transition:background .2s var(--ease);
+  transition:background .2s var(--ease),transform .2s var(--ease);
 }
-.cookie-bar-btn:hover{background:var(--ox-deep)}
-@media(max-width:600px){.cookie-bar{flex-direction:column;align-items:flex-start;gap:.7rem}}
+.cookie-bar-btn:hover{background:var(--ox-deep);transform:translateY(-1px)}
+@media(max-width:720px){.cookie-bar{left:.75rem;right:.75rem;bottom:.75rem;max-width:none}}
+@media(prefers-reduced-motion:reduce){.cookie-bar{transition:opacity .2s ease;transform:none}}
 
 /* ---------- print (menu page) ---------- */
 @media print{
