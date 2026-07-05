@@ -346,6 +346,11 @@
       if (!c) { var im = f.querySelector('img'); c = im ? (im.getAttribute('alt') || '') : ''; }
       return c || '';
     }
+    /* caption with the ampersand in the body font (Cormorant's swash & looks foreign) */
+    function setCap(str) {
+      var esc = str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      capEl.innerHTML = esc.replace(/&amp;/g, '<span class="amp">&amp;</span>');
+    }
     function placeTrack() {
       track.classList.remove('anim');
       track.style.transform = 'translateX(' + (-stage.clientWidth) + 'px)';
@@ -356,7 +361,7 @@
       slideImgs[2].src = srcOf(idx + 1);
       slideImgs[1].alt = capOf(idx);
       counterEl.textContent = (idx + 1) + ' / ' + figs.length;
-      capEl.textContent = capOf(idx);
+      setCap(capOf(idx));
       placeTrack();
     }
     function slide(delta) { // -1 prev, +1 next, 0 snap back
@@ -371,15 +376,20 @@
         animating = false;
       }, reduce ? 20 : 430);
     }
+    var lastFocus = null;
     function open(i) {
       idx = wrap(i);
+      lastFocus = figs[idx];              /* restore focus here on close */
       lb.classList.add('open');
       doc.body.style.overflow = 'hidden';
       render();
+      /* focus after the .open style lands (can't focus a visibility:hidden element) */
+      requestAnimationFrame(function () { lb.querySelector('.lb-close').focus(); });
     }
     function close() {
       lb.classList.remove('open');
       doc.body.style.overflow = '';
+      if (lastFocus) { lastFocus.focus(); lastFocus = null; }
     }
 
     figs.forEach(function (f, i) {
@@ -403,6 +413,15 @@
       if (e.key === 'Escape') close();
       else if (e.key === 'ArrowLeft') slide(-1);
       else if (e.key === 'ArrowRight') slide(1);
+      else if (e.key === 'Tab') {
+        /* trap focus inside the dialog (prev/next are display:none on mobile -> excluded) */
+        var f = [].filter.call(lb.querySelectorAll('button'), function (b) { return b.offsetParent !== null; });
+        if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (!lb.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+        else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     });
     window.addEventListener('resize', function () { if (lb.classList.contains('open') && !animating) placeTrack(); });
 
@@ -461,7 +480,7 @@
     /* keep caption in sync if language is toggled while open */
     doc.querySelectorAll('.lang-toggle button').forEach(function (b) {
       b.addEventListener('click', function () {
-        if (lb.classList.contains('open')) { capEl.textContent = capOf(idx); slideImgs[1].alt = capOf(idx); }
+        if (lb.classList.contains('open')) { setCap(capOf(idx)); slideImgs[1].alt = capOf(idx); }
       });
     });
   }
