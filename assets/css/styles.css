@@ -243,6 +243,17 @@ html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
 .band .band-info .bi-value{font-family:var(--font-display);font-size:1.3rem;font-weight:500;font-variant-numeric:lining-nums} /* lining digits, like /directions */
 .band .band-info .bi-value .n{font-weight:700}
 .tdash,.amp{font-family:var(--font-body);font-style:normal} /* Cormorant's hyphen & swash ampersand look foreign; Spectral's are conventional */
+
+/* ---------- EN balance: Cormorant's Latin renders smaller/lighter than its Greek ----------
+   Weight one step up + ~5% size on display elements, English only. Greek untouched. */
+html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3,html[lang="en"] h4{font-weight:700}
+html[lang="en"] .tagline{font-weight:600;font-size:clamp(1.37rem,2.94vw,2.1rem)}
+html[lang="en"] .signature-line{font-weight:500}
+html[lang="en"] .menu-cat-head .cat-en{font-weight:500}
+html[lang="en"] .display{font-size:clamp(2.73rem,7.35vw,5.67rem)}
+html[lang="en"] .page-hero h1{font-size:clamp(2.52rem,6.3vw,4.2rem)}
+html[lang="en"] h2.section-title{font-size:clamp(2.1rem,4.41vw,3.41rem)}
+html[lang="en"] .band h2{font-size:clamp(1.79rem,3.15vw,2.63rem)}
 .band .band-info a.bi-value{font-weight:700} /* phone: all numbers */
 html[lang="en"] .band .band-info .bi-value{font-weight:700}
 .band a.bi-value:hover{text-decoration:underline}

@@ -44,6 +44,8 @@
        only so the Find Us text matches the heavier Greek look */
     html[lang="en"] .page-hero p        { font-weight: 600; }
     html[lang="en"] .info-row .it-value { font-weight: 700; }
+    /* keep this utility page's own smaller h1 scale in EN (overrides the global EN size bump) */
+    html[lang="en"] .page-hero h1       { font-size: clamp(1.75rem, 4vw, 2.6rem); }
   </style>
   <script type="application/ld+json">
   {
