@@ -242,7 +242,7 @@ html.tk-intro-on .hero .hero-bg img{animation-play-state:paused}
 .band .band-info .bi-label{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.3rem;font-weight:600}
 .band .band-info .bi-value{font-family:var(--font-display);font-size:1.3rem;font-weight:500;font-variant-numeric:lining-nums} /* lining digits, like /directions */
 .band .band-info .bi-value .n{font-weight:700}
-.tdash{font-family:var(--font-body)} /* Cormorant's hyphen sits low/short between lining digits; Spectral's is clean */
+.tdash,.amp{font-family:var(--font-body);font-style:normal} /* Cormorant's hyphen & swash ampersand look foreign; Spectral's are conventional */
 .band .band-info a.bi-value{font-weight:700} /* phone: all numbers */
 html[lang="en"] .band .band-info .bi-value{font-weight:700}
 .band a.bi-value:hover{text-decoration:underline}
