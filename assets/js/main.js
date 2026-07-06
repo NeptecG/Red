@@ -334,7 +334,7 @@
     var slideImgs = lb.querySelectorAll('.lb-slide img');
     var counterEl = lb.querySelector('.lb-counter');
     var capEl = lb.querySelector('.lb-cap');
-    var idx = 0, animating = false;
+    var idx = 0, animating = false, slideTimer = null, pendingDelta = 0;
 
     function wrap(i) { return (i + figs.length) % figs.length; }
     function srcOf(i) { var im = figs[wrap(i)].querySelector('img'); return im ? im.getAttribute('src') : ''; }
@@ -364,17 +364,30 @@
       setCap(capOf(idx));
       placeTrack();
     }
+    /* apply the in-flight step and re-center, instantly (no animation) */
+    function commitSlide() {
+      clearTimeout(slideTimer); slideTimer = null;
+      if (pendingDelta) { idx = wrap(idx + pendingDelta); pendingDelta = 0; }
+      render();               /* placeTrack() re-centers without the anim class */
+      animating = false;
+    }
     function slide(delta) { // -1 prev, +1 next, 0 snap back
-      if (animating) return;
+      if (!delta) {           /* snap the dragged track back to centre */
+        track.classList.add('anim');
+        track.style.transform = 'translateX(' + (-stage.clientWidth) + 'px)';
+        return;
+      }
+      /* interruptible: a new swipe finishes the previous one at once, then starts fresh */
+      if (animating) {
+        commitSlide();
+        track.getBoundingClientRect(); /* reflow so the next tween starts from centre */
+      }
       var w = stage.clientWidth;
       animating = true;
+      pendingDelta = delta;
       track.classList.add('anim');
       track.style.transform = 'translateX(' + (-w - delta * w) + 'px)';
-      setTimeout(function () {
-        if (delta) idx = wrap(idx + delta);
-        render();
-        animating = false;
-      }, reduce ? 20 : 430);
+      slideTimer = setTimeout(commitSlide, reduce ? 20 : 430);
     }
     var lastFocus = null;
     function open(i) {
