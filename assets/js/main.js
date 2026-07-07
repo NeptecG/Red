@@ -316,6 +316,7 @@
     lb.setAttribute('role', 'dialog');
     lb.setAttribute('aria-modal', 'true');
     lb.setAttribute('aria-label', 'Gallery');
+    lb.setAttribute('tabindex', '-1');  /* focus the dialog (no ring) instead of the close button */
     lb.innerHTML =
       '<div class="lb-stage"><div class="lb-track">' +
         '<div class="lb-slide"><img alt="" draggable="false" decoding="async"></div>' +
@@ -409,8 +410,8 @@
       lb.classList.add('open');
       doc.body.style.overflow = 'hidden';
       render();
-      /* focus after the .open style lands (can't focus a visibility:hidden element) */
-      requestAnimationFrame(function () { lb.querySelector('.lb-close').focus(); });
+      /* focus the dialog after the .open style lands (can't focus a hidden element) */
+      requestAnimationFrame(function () { lb.focus(); });
     }
     function close() {
       lb.classList.remove('open');
