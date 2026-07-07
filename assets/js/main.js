@@ -318,9 +318,9 @@
     lb.setAttribute('aria-label', 'Gallery');
     lb.innerHTML =
       '<div class="lb-stage"><div class="lb-track">' +
-        '<div class="lb-slide"><img alt="" draggable="false"></div>' +
-        '<div class="lb-slide"><img alt="" draggable="false"></div>' +
-        '<div class="lb-slide"><img alt="" draggable="false"></div>' +
+        '<div class="lb-slide"><img alt="" draggable="false" decoding="async"></div>' +
+        '<div class="lb-slide"><img alt="" draggable="false" decoding="async"></div>' +
+        '<div class="lb-slide"><img alt="" draggable="false" decoding="async"></div>' +
       '</div></div>' +
       '<div class="lb-counter"></div>' +
       '<div class="lb-cap"></div>' +
@@ -362,13 +362,15 @@
       var s = srcOf(i);
       if (!s || preloaded[s]) return;
       var im = new Image();
+      im.decoding = 'async';  /* decode off the main thread so it's frame-ready */
       im.src = s;
       preloaded[s] = im;
     }
+    function setSrc(imgEl, s) { if (imgEl.getAttribute('src') !== s) imgEl.src = s; }
     function render() {
-      slideImgs[0].src = srcOf(idx - 1);
-      slideImgs[1].src = srcOf(idx);
-      slideImgs[2].src = srcOf(idx + 1);
+      setSrc(slideImgs[0], srcOf(idx - 1));
+      setSrc(slideImgs[1], srcOf(idx));
+      setSrc(slideImgs[2], srcOf(idx + 1));
       slideImgs[1].alt = capOf(idx);
       counterEl.textContent = (idx + 1) + ' / ' + figs.length;
       setCap(capOf(idx));
