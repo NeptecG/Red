@@ -355,6 +355,16 @@
       track.classList.remove('anim');
       track.style.transform = 'translateX(' + (-stage.clientWidth) + 'px)';
     }
+    /* warm the full-res files just past the visible window so fast swipes
+       don't land on a still-downloading image (the first-visit "flash") */
+    var preloaded = {};
+    function preload(i) {
+      var s = srcOf(i);
+      if (!s || preloaded[s]) return;
+      var im = new Image();
+      im.src = s;
+      preloaded[s] = im;
+    }
     function render() {
       slideImgs[0].src = srcOf(idx - 1);
       slideImgs[1].src = srcOf(idx);
@@ -363,6 +373,7 @@
       counterEl.textContent = (idx + 1) + ' / ' + figs.length;
       setCap(capOf(idx));
       placeTrack();
+      preload(idx - 2); preload(idx + 2);
     }
     /* apply the in-flight step and re-center, instantly (no animation) */
     function commitSlide() {
@@ -441,7 +452,7 @@
     /* live touch-drag: the neighbour peeks in before the slide snaps */
     var downX = null, downY = null, dragging = false, dx = 0;
     stage.addEventListener('touchstart', function (e) {
-      if (animating) return;
+      if (animating) commitSlide();  /* grabbing mid-slide finishes it, then drags fresh */
       var t = e.changedTouches[0];
       downX = t.clientX; downY = t.clientY; dragging = true; dx = 0;
       track.classList.remove('anim');
@@ -467,7 +478,8 @@
     /* mouse drag: same slide-with-cursor behaviour as touch, for desktop */
     var mDown = false, mStartX = 0, mDx = 0, mMoved = false;
     stage.addEventListener('mousedown', function (e) {
-      if (animating || e.button !== 0) return;
+      if (e.button !== 0) return;
+      if (animating) commitSlide();  /* grabbing mid-slide finishes it, then drags fresh */
       mDown = true; mStartX = e.clientX; mDx = 0; mMoved = false;
       track.classList.remove('anim');
       stage.classList.add('dragging');
