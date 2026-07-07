@@ -465,7 +465,8 @@
       var mx = t.clientX - downX, my = t.clientY - downY;
       if (Math.abs(mx) < Math.abs(my) && Math.abs(dx) < 6) return;
       dx = mx;
-      track.style.transform = 'translateX(' + (-stage.clientWidth + mx) + 'px)';
+      var w = stage.clientWidth, vis = Math.max(-w / 2, Math.min(w / 2, mx)); /* reveal up to half the next photo */
+      track.style.transform = 'translateX(' + (-w + vis) + 'px)';
     }, { passive: true });
     stage.addEventListener('touchend', function () {
       if (!dragging) return;
@@ -491,7 +492,8 @@
       if (!mDown) return;
       mDx = e.clientX - mStartX;
       if (Math.abs(mDx) > 4) mMoved = true;
-      track.style.transform = 'translateX(' + (-stage.clientWidth + mDx) + 'px)';
+      var w = stage.clientWidth, vis = Math.max(-w / 2, Math.min(w / 2, mDx)); /* reveal up to half the next photo */
+      track.style.transform = 'translateX(' + (-w + vis) + 'px)';
     });
     window.addEventListener('mouseup', function () {
       if (!mDown) return;
