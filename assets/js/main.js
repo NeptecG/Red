@@ -289,6 +289,110 @@
     });
   });
 
+  /* ---------- footer contacts: copyable dialog on desktop ----------
+     On a PC tel:/mailto: usually do nothing, so the phone/email/social chips
+     open a small centred dialog with the value + Copy (and Open for web links).
+     Touch devices are untouched - native call / mail app / Messenger deep link. */
+  if (window.matchMedia('(pointer: fine)').matches) {
+    var chips = doc.querySelectorAll('.site-footer a.contact-link, .site-footer .social a');
+    if (chips.length) {
+      var tEn = function () { return root.getAttribute('lang') === 'en'; };
+      var tx = function (gr, en) { return tEn() ? en : gr; };
+
+      var cm = doc.createElement('div');
+      cm.className = 'cmodal';
+      cm.setAttribute('role', 'dialog');
+      cm.setAttribute('aria-modal', 'true');
+      cm.setAttribute('aria-label', tx('Επικοινωνία', 'Contact'));
+      cm.hidden = true;
+      cm.innerHTML =
+        '<div class="cmodal-card" role="document">' +
+          '<button type="button" class="cmodal-close" aria-label="Close">&times;</button>' +
+          '<p class="cmodal-label"></p>' +
+          '<p class="cmodal-value"></p>' +
+          '<div class="cmodal-actions">' +
+            '<button type="button" class="btn btn-solid cmodal-copy"></button>' +
+            '<a class="btn btn-ghost cmodal-open" target="_blank" rel="noopener" hidden></a>' +
+          '</div>' +
+        '</div>';
+      doc.body.appendChild(cm);
+
+      var card = cm.querySelector('.cmodal-card');
+      var labelEl = cm.querySelector('.cmodal-label');
+      var valueEl = cm.querySelector('.cmodal-value');
+      var copyBtn = cm.querySelector('.cmodal-copy');
+      var openBtn = cm.querySelector('.cmodal-open');
+      var closeX = cm.querySelector('.cmodal-close');
+      var lastFocus = null, copyTimer = null;
+
+      function chipInfo(a) {
+        var href = a.getAttribute('href') || '';
+        if (href.indexOf('tel:') === 0) {
+          return { label: tx('Τηλέφωνο', 'Phone'), value: (a.querySelector('span') || a).textContent.trim(), web: false };
+        }
+        if (href.indexOf('mailto:') === 0) {
+          return { label: 'Email', value: href.replace('mailto:', ''), web: false };
+        }
+        return { label: a.getAttribute('aria-label') || 'Link', value: href, web: true };
+      }
+      function openModal(a) {
+        lastFocus = a;
+        var info = chipInfo(a);
+        labelEl.textContent = info.label;
+        valueEl.textContent = info.value;
+        if (info.web) { openBtn.href = a.href; openBtn.hidden = false; } else { openBtn.hidden = true; }
+        openBtn.textContent = tx('Άνοιγμα', 'Open');
+        if (copyTimer) { clearTimeout(copyTimer); copyTimer = null; }
+        copyBtn.textContent = tx('Αντιγραφή', 'Copy');
+        cm.hidden = false;
+        requestAnimationFrame(function () { cm.classList.add('open'); closeX.focus(); });
+        doc.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        cm.classList.remove('open');
+        setTimeout(function () { cm.hidden = true; }, 250);
+        doc.body.style.overflow = '';
+        if (lastFocus) { lastFocus.focus(); lastFocus = null; }
+      }
+      function fallbackCopy(text) {
+        var ta = doc.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        doc.body.appendChild(ta); ta.select();
+        try { doc.execCommand('copy'); } catch (e) { /* give up quietly */ }
+        ta.remove();
+      }
+
+      copyBtn.addEventListener('click', function () {
+        var text = valueEl.textContent || '';
+        function done() {
+          copyBtn.textContent = tx('Αντιγράφηκε!', 'Copied!');
+          if (copyTimer) clearTimeout(copyTimer);
+          copyTimer = setTimeout(function () { copyBtn.textContent = tx('Αντιγραφή', 'Copy'); }, 1800);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+        } else { fallbackCopy(text); done(); }
+      });
+      closeX.addEventListener('click', closeModal);
+      cm.addEventListener('click', function (e) { if (!card.contains(e.target)) closeModal(); });
+      window.addEventListener('keydown', function (e) {
+        if (cm.hidden) return;
+        if (e.key === 'Escape') { closeModal(); return; }
+        if (e.key === 'Tab') {
+          var f = [].filter.call(cm.querySelectorAll('button, a[href]'), function (b) { return b.offsetParent !== null; });
+          if (!f.length) return;
+          var first = f[0], last = f[f.length - 1];
+          if (!cm.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+          else if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      });
+      chips.forEach(function (a) {
+        a.addEventListener('click', function (e) { e.preventDefault(); openModal(a); });
+      });
+    }
+  }
+
   /* ---------- phone input: digits, +, spaces only (no letters) ---------- */
   var phoneInput = doc.getElementById('r-phone');
   if (phoneInput) {
