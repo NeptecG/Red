@@ -312,7 +312,6 @@
           '<p class="cmodal-value"></p>' +
           '<div class="cmodal-actions">' +
             '<button type="button" class="btn btn-solid cmodal-copy"></button>' +
-            '<a class="btn btn-ghost cmodal-open" target="_blank" rel="noopener" hidden></a>' +
           '</div>' +
         '</div>';
       doc.body.appendChild(cm);
@@ -321,27 +320,24 @@
       var labelEl = cm.querySelector('.cmodal-label');
       var valueEl = cm.querySelector('.cmodal-value');
       var copyBtn = cm.querySelector('.cmodal-copy');
-      var openBtn = cm.querySelector('.cmodal-open');
       var closeX = cm.querySelector('.cmodal-close');
       var lastFocus = null, copyTimer = null;
 
       function chipInfo(a) {
         var href = a.getAttribute('href') || '';
         if (href.indexOf('tel:') === 0) {
-          return { label: tx('Τηλέφωνο', 'Phone'), value: (a.querySelector('span') || a).textContent.trim(), web: false };
+          return { label: tx('Τηλέφωνο', 'Phone'), value: (a.querySelector('span') || a).textContent.trim() };
         }
         if (href.indexOf('mailto:') === 0) {
-          return { label: 'Email', value: href.replace('mailto:', ''), web: false };
+          return { label: 'Email', value: href.replace('mailto:', '') };
         }
-        return { label: a.getAttribute('aria-label') || 'Link', value: href, web: true };
+        return { label: a.getAttribute('aria-label') || 'Link', value: href };
       }
       function openModal(a) {
         lastFocus = a;
         var info = chipInfo(a);
         labelEl.textContent = info.label;
         valueEl.textContent = info.value;
-        if (info.web) { openBtn.href = a.href; openBtn.hidden = false; } else { openBtn.hidden = true; }
-        openBtn.textContent = tx('Άνοιγμα', 'Open');
         if (copyTimer) { clearTimeout(copyTimer); copyTimer = null; }
         copyBtn.textContent = tx('Αντιγραφή', 'Copy');
         cm.hidden = false;
