@@ -299,7 +299,7 @@ html[lang="en"] .band .band-info .bi-value{font-weight:700}
 /* opaque backdrop, no backdrop-filter: a full-viewport blur re-blurs the whole page
    every frame while the carousel animates and full-res images decode - the GPU cost
    that freezes/crashes mobile. At 95% opacity the blur was invisible anyway. */
-.lightbox{position:fixed;inset:0;z-index:200;background:rgba(20,17,12,.95);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility 0s .3s}
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(20,17,14,.95);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s var(--ease),visibility 0s .3s}
 .lightbox.open{opacity:1;visibility:visible;transition:opacity .3s var(--ease),visibility 0s 0s} /* visible instantly on open so the dialog is focusable; hides after the fade on close */
 .lightbox:focus,.lightbox:focus-visible{outline:none} /* dialog container holds focus without a ring; buttons still show their ring on keyboard Tab */
 .lb-stage{position:absolute;inset:0;overflow:hidden;touch-action:pan-y;cursor:grab}
